@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,48 @@ namespace Registo_Colaboradores
         public Form1()
         {
             InitializeComponent();
+
+            Carregar_Dados();
+
         }
+
+        private void Carregar_Dados()
+        {
+            string connectionString = @"Data Source=AM\SQLEXPRESS; Initial Catalog=AdventureWorks2019; User ID=sa; Password=Flamengo2019";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = @"SELECT
+                      [FirstName] as 'Nome'
+                      ,[LastName] as 'Apelido' 
+                      ,[JobTitle] as 'Cargo'
+                      ,[PhoneNumber] as 'Telefone'
+                      ,[EmailAddress] as 'Endereço de E-mail'
+                      ,[AddressLine1] as 'Morada'
+                      ,[City] as 'Cidade'
+                      ,[StateProvinceName] as 'Província'
+                      ,[PostalCode] as 'Código Postal'
+                      ,[CountryRegionName] 'País'
+                  FROM [AdventureWorks2019].[HumanResources].[vEmployee]";
+
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                DataGridView_Colaboradores.DataSource = dt;
+
+                DataGridView_Colaboradores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                
+                
+            }
+
+        }
+
     }
+
+   
 }
