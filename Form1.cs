@@ -17,6 +17,7 @@ namespace Registo_Colaboradores
         {
             InitializeComponent();
 
+            DataGridView_Colaboradores.DataBindingComplete += DataGridView_Colaboradores_DataBindingComplete;
             Carregar_Dados();
 
         }
@@ -51,10 +52,18 @@ namespace Registo_Colaboradores
                 DataGridView_Colaboradores.DataSource = dt;
 
                 DataGridView_Colaboradores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                
-                
+
             }
 
+        }
+
+        private void DataGridView_Colaboradores_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            if (DataGridView_Colaboradores.Columns.Contains("Endereço de E-mail"))
+            {
+                DataGridView_Colaboradores.Columns["Cargo"].Width = 270;
+                DataGridView_Colaboradores.Columns["Endereço de E-mail"].Width = 270;
+            }
         }
 
     }
