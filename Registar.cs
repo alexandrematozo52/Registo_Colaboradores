@@ -153,7 +153,13 @@ namespace Registo_Colaboradores
                 DataGridView_Colaboradores.Rows[_hoveredRowIndex].DefaultCellStyle.BackColor = Color.White;
                 _hoveredRowIndex = -1;
             }
-        }       
+        }
+
+        private void bt_Add_Click(object sender, EventArgs e)
+        {
+            Novo_Registo _Registo = new Novo_Registo();
+            _Registo.ShowDialog();
+        }
     }
 
    

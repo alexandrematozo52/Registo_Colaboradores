@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Novo_Registo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Novo_Registo.Designer.cs">
+      <DependentUpon>Novo_Registo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Novo_Registo.resx">
+      <DependentUpon>Novo_Registo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registar.resx">
       <DependentUpon>Registar.cs</DependentUpon>
     </EmbeddedResource>

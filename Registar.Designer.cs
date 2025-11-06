@@ -34,7 +34,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bt_Add = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.DataGridView_Colaboradores = new Zuby.ADGV.AdvancedDataGridView();
@@ -48,7 +48,7 @@
             // 
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.bt_Add);
             this.panel1.Location = new System.Drawing.Point(13, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1383, 48);
@@ -86,21 +86,22 @@
             this.button2.TabIndex = 1;
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // bt_Add
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::Registo_Colaboradores.Properties.Resources.adicionar_botao;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(44, 42);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = false;
+            this.bt_Add.BackColor = System.Drawing.Color.Transparent;
+            this.bt_Add.BackgroundImage = global::Registo_Colaboradores.Properties.Resources.adicionar_botao;
+            this.bt_Add.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bt_Add.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_Add.FlatAppearance.BorderSize = 0;
+            this.bt_Add.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.bt_Add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.bt_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Add.Location = new System.Drawing.Point(3, 3);
+            this.bt_Add.Name = "bt_Add";
+            this.bt_Add.Size = new System.Drawing.Size(44, 42);
+            this.bt_Add.TabIndex = 0;
+            this.bt_Add.UseVisualStyleBackColor = false;
+            this.bt_Add.Click += new System.EventHandler(this.bt_Add_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -162,7 +163,7 @@
             this.DataGridView_Colaboradores.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.DataGridView_Colaboradores.TabIndex = 0;
             // 
-            // Form1
+            // Registar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -170,7 +171,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "Registar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registar Colaboradores";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -185,7 +186,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bt_Add;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
