@@ -254,7 +254,7 @@ namespace Registo_Colaboradores
                 txtCargo.Text = nome;
 
                 // Define o cursor para o final do texto
-                txtCargo.SelectionStart = textBoxApelido.Text.Length;
+                txtCargo.SelectionStart = txtCargo.Text.Length;
             }
 
             if (txtCargo.Text == "")
