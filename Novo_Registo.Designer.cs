@@ -31,26 +31,32 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Novo_Registo));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel_NovoRegisto = new System.Windows.Forms.Panel();
-            this.labelNome = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.textBoxNome = new System.Windows.Forms.TextBox();
-            this.pictureBoxNome = new System.Windows.Forms.PictureBox();
-            this.textBoxEditarNome = new System.Windows.Forms.TextBox();
             this.labelApelido = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.textBoxApelido = new System.Windows.Forms.TextBox();
             this.pictureBoxApelido = new System.Windows.Forms.PictureBox();
             this.textBoxEditarApelido = new System.Windows.Forms.TextBox();
-            this.labelCargo = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCargo = new System.Windows.Forms.TextBox();
-            this.pictureBoxCargo = new System.Windows.Forms.PictureBox();
+            this.labelNome = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.textBoxNome = new System.Windows.Forms.TextBox();
+            this.pictureBoxNome = new System.Windows.Forms.PictureBox();
+            this.textBoxEditarNome = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.pictureBoxCargo = new System.Windows.Forms.PictureBox();
+            this.txtCargo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelCargo = new System.Windows.Forms.Label();
+            this.labelTelefone = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTelefone = new System.Windows.Forms.TextBox();
+            this.pictureBoxTelefone = new System.Windows.Forms.PictureBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel_NovoRegisto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxApelido)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCargo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTelefone)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -72,6 +78,11 @@
             // 
             // panel_NovoRegisto
             // 
+            this.panel_NovoRegisto.Controls.Add(this.labelTelefone);
+            this.panel_NovoRegisto.Controls.Add(this.label3);
+            this.panel_NovoRegisto.Controls.Add(this.txtTelefone);
+            this.panel_NovoRegisto.Controls.Add(this.pictureBoxTelefone);
+            this.panel_NovoRegisto.Controls.Add(this.textBox3);
             this.panel_NovoRegisto.Controls.Add(this.labelCargo);
             this.panel_NovoRegisto.Controls.Add(this.label2);
             this.panel_NovoRegisto.Controls.Add(this.txtCargo);
@@ -92,60 +103,6 @@
             this.panel_NovoRegisto.Name = "panel_NovoRegisto";
             this.panel_NovoRegisto.Size = new System.Drawing.Size(1268, 522);
             this.panel_NovoRegisto.TabIndex = 0;
-            // 
-            // labelNome
-            // 
-            this.labelNome.AutoSize = true;
-            this.labelNome.BackColor = System.Drawing.Color.White;
-            this.labelNome.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.labelNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNome.ForeColor = System.Drawing.Color.LightGray;
-            this.labelNome.Location = new System.Drawing.Point(66, 55);
-            this.labelNome.Name = "labelNome";
-            this.labelNome.Size = new System.Drawing.Size(111, 20);
-            this.labelNome.TabIndex = 234;
-            this.labelNome.Text = "Inserir Nome";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(60, 14);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(51, 20);
-            this.label25.TabIndex = 233;
-            this.label25.Text = "Nome";
-            // 
-            // textBoxNome
-            // 
-            this.textBoxNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNome.Location = new System.Drawing.Point(65, 55);
-            this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(452, 19);
-            this.textBoxNome.TabIndex = 232;
-            // 
-            // pictureBoxNome
-            // 
-            this.pictureBoxNome.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxNome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxNome.BackgroundImage")));
-            this.pictureBoxNome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxNome.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.pictureBoxNome.Location = new System.Drawing.Point(54, 40);
-            this.pictureBoxNome.Name = "pictureBoxNome";
-            this.pictureBoxNome.Size = new System.Drawing.Size(473, 50);
-            this.pictureBoxNome.TabIndex = 235;
-            this.pictureBoxNome.TabStop = false;
-            // 
-            // textBoxEditarNome
-            // 
-            this.textBoxEditarNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxEditarNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEditarNome.Location = new System.Drawing.Point(65, 55);
-            this.textBoxEditarNome.Name = "textBoxEditarNome";
-            this.textBoxEditarNome.Size = new System.Drawing.Size(452, 19);
-            this.textBoxEditarNome.TabIndex = 236;
             // 
             // labelApelido
             // 
@@ -206,38 +163,68 @@
             this.textBoxEditarApelido.Size = new System.Drawing.Size(452, 19);
             this.textBoxEditarApelido.TabIndex = 241;
             // 
-            // labelCargo
+            // labelNome
             // 
-            this.labelCargo.AutoSize = true;
-            this.labelCargo.BackColor = System.Drawing.Color.White;
-            this.labelCargo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.labelCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCargo.ForeColor = System.Drawing.Color.LightGray;
-            this.labelCargo.Location = new System.Drawing.Point(66, 175);
-            this.labelCargo.Name = "labelCargo";
-            this.labelCargo.Size = new System.Drawing.Size(113, 20);
-            this.labelCargo.TabIndex = 244;
-            this.labelCargo.Text = "Inserir Cargo";
+            this.labelNome.AutoSize = true;
+            this.labelNome.BackColor = System.Drawing.Color.White;
+            this.labelNome.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.labelNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNome.ForeColor = System.Drawing.Color.LightGray;
+            this.labelNome.Location = new System.Drawing.Point(66, 55);
+            this.labelNome.Name = "labelNome";
+            this.labelNome.Size = new System.Drawing.Size(111, 20);
+            this.labelNome.TabIndex = 234;
+            this.labelNome.Text = "Inserir Nome";
             // 
-            // label2
+            // label25
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(60, 134);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 20);
-            this.label2.TabIndex = 243;
-            this.label2.Text = "Cargo";
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(60, 14);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(51, 20);
+            this.label25.TabIndex = 233;
+            this.label25.Text = "Nome";
             // 
-            // txtCargo
+            // textBoxNome
             // 
-            this.txtCargo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCargo.Location = new System.Drawing.Point(65, 175);
-            this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Size = new System.Drawing.Size(452, 19);
-            this.txtCargo.TabIndex = 242;
+            this.textBoxNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNome.Location = new System.Drawing.Point(65, 55);
+            this.textBoxNome.Name = "textBoxNome";
+            this.textBoxNome.Size = new System.Drawing.Size(452, 19);
+            this.textBoxNome.TabIndex = 232;
+            // 
+            // pictureBoxNome
+            // 
+            this.pictureBoxNome.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxNome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxNome.BackgroundImage")));
+            this.pictureBoxNome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxNome.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.pictureBoxNome.Location = new System.Drawing.Point(54, 40);
+            this.pictureBoxNome.Name = "pictureBoxNome";
+            this.pictureBoxNome.Size = new System.Drawing.Size(473, 50);
+            this.pictureBoxNome.TabIndex = 235;
+            this.pictureBoxNome.TabStop = false;
+            // 
+            // textBoxEditarNome
+            // 
+            this.textBoxEditarNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxEditarNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEditarNome.Location = new System.Drawing.Point(65, 55);
+            this.textBoxEditarNome.Name = "textBoxEditarNome";
+            this.textBoxEditarNome.Size = new System.Drawing.Size(452, 19);
+            this.textBoxEditarNome.TabIndex = 236;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(65, 175);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(452, 19);
+            this.textBox2.TabIndex = 246;
             // 
             // pictureBoxCargo
             // 
@@ -251,14 +238,92 @@
             this.pictureBoxCargo.TabIndex = 245;
             this.pictureBoxCargo.TabStop = false;
             // 
-            // textBox2
+            // txtCargo
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(65, 175);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(452, 19);
-            this.textBox2.TabIndex = 246;
+            this.txtCargo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCargo.Location = new System.Drawing.Point(65, 175);
+            this.txtCargo.Name = "txtCargo";
+            this.txtCargo.Size = new System.Drawing.Size(452, 19);
+            this.txtCargo.TabIndex = 242;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(60, 134);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 20);
+            this.label2.TabIndex = 243;
+            this.label2.Text = "Cargo";
+            // 
+            // labelCargo
+            // 
+            this.labelCargo.AutoSize = true;
+            this.labelCargo.BackColor = System.Drawing.Color.White;
+            this.labelCargo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.labelCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCargo.ForeColor = System.Drawing.Color.LightGray;
+            this.labelCargo.Location = new System.Drawing.Point(66, 175);
+            this.labelCargo.Name = "labelCargo";
+            this.labelCargo.Size = new System.Drawing.Size(113, 20);
+            this.labelCargo.TabIndex = 244;
+            this.labelCargo.Text = "Inserir Cargo";
+            // 
+            // labelTelefone
+            // 
+            this.labelTelefone.AutoSize = true;
+            this.labelTelefone.BackColor = System.Drawing.Color.White;
+            this.labelTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.labelTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTelefone.ForeColor = System.Drawing.Color.LightGray;
+            this.labelTelefone.Location = new System.Drawing.Point(751, 175);
+            this.labelTelefone.Name = "labelTelefone";
+            this.labelTelefone.Size = new System.Drawing.Size(135, 20);
+            this.labelTelefone.TabIndex = 249;
+            this.labelTelefone.Text = "Inserir Telefone";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(745, 134);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 20);
+            this.label3.TabIndex = 248;
+            this.label3.Text = "Telefone";
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefone.Location = new System.Drawing.Point(750, 175);
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(452, 19);
+            this.txtTelefone.TabIndex = 247;
+            // 
+            // pictureBoxTelefone
+            // 
+            this.pictureBoxTelefone.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxTelefone.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxTelefone.BackgroundImage")));
+            this.pictureBoxTelefone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxTelefone.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.pictureBoxTelefone.Location = new System.Drawing.Point(739, 160);
+            this.pictureBoxTelefone.Name = "pictureBoxTelefone";
+            this.pictureBoxTelefone.Size = new System.Drawing.Size(473, 50);
+            this.pictureBoxTelefone.TabIndex = 250;
+            this.pictureBoxTelefone.TabStop = false;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(750, 175);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(452, 19);
+            this.textBox3.TabIndex = 251;
             // 
             // Novo_Registo
             // 
@@ -272,9 +337,10 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel_NovoRegisto.ResumeLayout(false);
             this.panel_NovoRegisto.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxApelido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCargo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTelefone)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -293,6 +359,11 @@
         public System.Windows.Forms.TextBox textBoxApelido;
         public System.Windows.Forms.PictureBox pictureBoxApelido;
         public System.Windows.Forms.TextBox textBoxEditarApelido;
+        public System.Windows.Forms.Label labelTelefone;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox txtTelefone;
+        public System.Windows.Forms.PictureBox pictureBoxTelefone;
+        public System.Windows.Forms.TextBox textBox3;
         public System.Windows.Forms.Label labelCargo;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox txtCargo;
