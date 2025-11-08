@@ -47,7 +47,8 @@ namespace Registo_Colaboradores
                       ,[StateProvinceName] as 'Província'
                       ,[PostalCode] as 'Código Postal'
                       ,[CountryRegionName] 'País'
-                  FROM [AdventureWorks2019].[HumanResources].[vEmployee]";
+                  FROM [AdventureWorks2019].[HumanResources].[vEmployee]
+                  ORDER BY Nome";
 
                 conn.Open();
 
