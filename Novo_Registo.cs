@@ -34,84 +34,84 @@ namespace Registo_Colaboradores
 
             //-----------------------------------------------------------------
             // EVENTOS DO TEXTBOX "APELIDO"
-            textBoxApelido.TextChanged += TextBoxApelido_TextChanged; // Quando o texto é alterado
-            textBoxApelido.Click += TextBoxApelido_Click;             // Clique no campo
-            textBoxApelido.Leave += TextBoxApelido_Leave;             // Perde o foco
-            textBoxApelido.Enter += TextBoxApelido_Enter;             // Ganha o foco
-            labelApelido.Click += LabelApelido_Click;                 // Clique no label
-            pictureBoxApelido.Click += PictureBoxApelido_Click;       // Clique no ícone
+            textBoxApelido.TextChanged += TextBoxApelido_TextChanged; 
+            textBoxApelido.Click += TextBoxApelido_Click;             
+            textBoxApelido.Leave += TextBoxApelido_Leave;             
+            textBoxApelido.Enter += TextBoxApelido_Enter;             
+            labelApelido.Click += LabelApelido_Click;                 
+            pictureBoxApelido.Click += PictureBoxApelido_Click;       
 
             //-----------------------------------------------------------------
             // EVENTOS DO TEXTBOX "CARGO"
-            txtCargo.TextChanged += TextBoxCargo_TextChanged; // Quando o texto muda
-            txtCargo.Click += TextBoxCargo_Click;             // Clique no campo
-            txtCargo.Leave += TextBoxCargo_Leave;             // Quando perde o foco
-            txtCargo.Enter += TextBoxCargo_Enter;             // Quando ganha o foco
-            labelCargo.Click += LabelCargo_Click;             // Clique no label
-            pictureBoxCargo.Click += PictureBoxCargo_Click;   // Clique no ícone
+            txtCargo.TextChanged += TextBoxCargo_TextChanged; 
+            txtCargo.Click += TextBoxCargo_Click;             
+            txtCargo.Leave += TextBoxCargo_Leave;             
+            txtCargo.Enter += TextBoxCargo_Enter;             
+            labelCargo.Click += LabelCargo_Click;             
+            pictureBoxCargo.Click += PictureBoxCargo_Click;   
 
             //-----------------------------------------------------------------
             // EVENTOS DO TEXTBOX "TELEFONE"
-            txtTelefone.TextChanged += TextBoxTelefone_TextChanged; // Texto alterado
-            txtTelefone.Click += TextBoxTelefone_Click;             // Clique no campo
-            txtTelefone.Leave += TextBoxTelefone_Leave;             // Perde foco
-            txtTelefone.Enter += TextBoxTelefone_Enter;             // Ganha foco
-            labelTelefone.Click += LabelTelefone_Click;             // Clique no label
-            pictureBoxTelefone.Click += PictureBoxTelefone_Click;   // Clique no ícone
+            txtTelefone.TextChanged += TextBoxTelefone_TextChanged; 
+            txtTelefone.Click += TextBoxTelefone_Click;             
+            txtTelefone.Leave += TextBoxTelefone_Leave;             
+            txtTelefone.Enter += TextBoxTelefone_Enter;             
+            labelTelefone.Click += LabelTelefone_Click;             
+            pictureBoxTelefone.Click += PictureBoxTelefone_Click;   
 
             //-----------------------------------------------------------------
             // EVENTOS DO TEXTBOX "EMAIL"
-            txtEmail.TextChanged += TextBoxEmail_TextChanged;   // Texto alterado
-            txtEmail.Click += TextBoxEmail_Click;               // Clique no campo
-            txtEmail.Leave += TextBoxEmail_Leave;               // Perde foco
-            txtEmail.Enter += TextBoxEmail_Enter;               // Ganha foco
-            labelEmail.Click += LabelEmail_Click;               // Clique no label
-            pictureBoxEmail.Click += PictureBoxEmail_Click;     // Clique no ícone
+            txtEmail.TextChanged += TextBoxEmail_TextChanged;   
+            txtEmail.Click += TextBoxEmail_Click;               
+            txtEmail.Leave += TextBoxEmail_Leave;               
+            txtEmail.Enter += TextBoxEmail_Enter;               
+            labelEmail.Click += LabelEmail_Click;               
+            pictureBoxEmail.Click += PictureBoxEmail_Click;     
 
             //-----------------------------------------------------------------
             // EVENTOS DO TEXTBOX "MORADA" (Endereço)
-            txtMorada.TextChanged += TextBoxMorada_TextChanged; // Texto alterado
-            txtMorada.Click += TextBoxMorada_Click;             // Clique no campo
-            txtMorada.Leave += TextBoxMorada_Leave;             // Perde foco
-            txtMorada.Enter += TextBoxMorada_Enter;             // Ganha foco
-            labelMorada.Click += LabelMorada_Click;             // Clique no label
-            pictureBoxMorada.Click += PictureBoxMorada_Click;   // Clique no ícone
+            txtMorada.TextChanged += TextBoxMorada_TextChanged; 
+            txtMorada.Click += TextBoxMorada_Click;             
+            txtMorada.Leave += TextBoxMorada_Leave;             
+            txtMorada.Enter += TextBoxMorada_Enter;             
+            labelMorada.Click += LabelMorada_Click;             
+            pictureBoxMorada.Click += PictureBoxMorada_Click;   
 
             //-----------------------------------------------------------------
             // EVENTOS DO TEXTBOX "CIDADE"
-            txtCidade.TextChanged += TextBoxCidade_TextChanged; // Texto alterado
-            txtCidade.Click += TextBoxCidade_Click;             // Clique no campo
-            txtCidade.Leave += TextBoxCidade_Leave;             // Perde foco
-            txtCidade.Enter += TextBoxCidade_Enter;             // Ganha foco
-            labelCidade.Click += LabelCidade_Click;             // Clique no label
-            pictureBoxCidade.Click += PictureBoxCidade_Click;   // Clique no ícone
+            txtCidade.TextChanged += TextBoxCidade_TextChanged; 
+            txtCidade.Click += TextBoxCidade_Click;             
+            txtCidade.Leave += TextBoxCidade_Leave;             
+            txtCidade.Enter += TextBoxCidade_Enter;             
+            labelCidade.Click += LabelCidade_Click;             
+            pictureBoxCidade.Click += PictureBoxCidade_Click;   
 
             //-----------------------------------------------------------------
             // EVENTOS DO TEXTBOX "DISTRITO"
-            txtDistrito.TextChanged += TextBoxDistrito_TextChanged; // Texto alterado
-            txtDistrito.Click += TextBoxDistrito_Click;             // Clique no campo
-            txtDistrito.Leave += TextBoxDistrito_Leave;             // Perde foco
-            txtDistrito.Enter += TextBoxDistrito_Enter;             // Ganha foco
-            labelDistrito.Click += LabelDistrito_Click;             // Clique no label
-            pictureBoxDistrito.Click += PictureBoxDistrito_Click;   // Clique no ícone
+            txtDistrito.TextChanged += TextBoxDistrito_TextChanged; 
+            txtDistrito.Click += TextBoxDistrito_Click;             
+            txtDistrito.Leave += TextBoxDistrito_Leave;             
+            txtDistrito.Enter += TextBoxDistrito_Enter;             
+            labelDistrito.Click += LabelDistrito_Click;            
+            pictureBoxDistrito.Click += PictureBoxDistrito_Click;   
 
             //-----------------------------------------------------------------
             // EVENTOS DO TEXTBOX "CÓDIGO POSTAL" (CP)
-            txtCP.TextChanged += TextBoxCP_TextChanged;         // Texto alterado
-            txtCP.Click += TextBoxCP_Click;                     // Clique no campo
-            txtCP.Leave += TextBoxCP_Leave;                     // Perde foco
-            txtCP.Enter += TextBoxCP_Enter;                     // Ganha foco
-            labelCP.Click += LabelCP_Click;                     // Clique no label
-            pictureBoxCP.Click += PictureBoxCP_Click;           // Clique no ícone
+            txtCP.TextChanged += TextBoxCP_TextChanged;       
+            txtCP.Click += TextBoxCP_Click;                     
+            txtCP.Leave += TextBoxCP_Leave;                    
+            txtCP.Enter += TextBoxCP_Enter;                     
+            labelCP.Click += LabelCP_Click;                     
+            pictureBoxCP.Click += PictureBoxCP_Click;           
 
             //-----------------------------------------------------------------
             // EVENTOS DO TEXTBOX "PAÍS"
-            txtPais.TextChanged += TextBoxPais_TextChanged;     // Texto alterado
-            txtPais.Click += TextBoxPais_Click;                 // Clique no campo
-            txtPais.Leave += TextBoxPais_Leave;                 // Perde foco
-            txtPais.Enter += TextBoxPais_Enter;                 // Ganha foco
-            labelPais.Click += LabelPais_Click;                 // Clique no label
-            pictureBoxPais.Click += PictureBoxPais_Click;       // Clique no ícone
+            txtPais.TextChanged += TextBoxPais_TextChanged;     
+            txtPais.Click += TextBoxPais_Click;                 
+            txtPais.Leave += TextBoxPais_Leave;                 
+            txtPais.Enter += TextBoxPais_Enter;                 
+            labelPais.Click += LabelPais_Click;                 
+            pictureBoxPais.Click += PictureBoxPais_Click;       
             #endregion
             //-----------------------------------------------------------------
             // Define o foco inicial para o label25 (provavelmente o primeiro campo visual do formulário)
@@ -119,62 +119,74 @@ namespace Registo_Colaboradores
 
         }
 
+        // Evento chamado quando o usuário clica em alguma parte do formulário principal
+        // (por exemplo, em uma área vazia ou botão que dispara "Novo_Registro_Click")
         private void Novo_Registro_Click(object sender, EventArgs e)
         {
+            // Verifica se o campo "Nome" está vazio
             if (textBoxNome.Text == string.Empty)
             {
-                labelNome.Visible = true;
-                label25.Select();
+                labelNome.Visible = true;    // Mostra o label "Nome" (placeholder)
+                label25.Select();            // Define o foco em label25 (provavelmente para evitar cursor piscando no campo)
             }
 
+            // Verifica se o campo "Apelido" está vazio
             if (textBoxApelido.Text == string.Empty)
             {
                 labelApelido.Visible = true;
                 label25.Select();
             }
 
+            // Verifica se o campo "Cargo" está vazio
             if (txtCargo.Text == string.Empty)
             {
                 labelCargo.Visible = true;
                 label25.Select();
             }
 
+            // Verifica se o campo "Telefone" está vazio
             if (txtTelefone.Text == string.Empty)
             {
                 labelTelefone.Visible = true;
                 label25.Select();
             }
 
+            // Verifica se o campo "Email" está vazio
             if (txtEmail.Text == string.Empty)
             {
                 labelEmail.Visible = true;
                 label25.Select();
             }
 
+            // Verifica se o campo "Morada" (Endereço) está vazio
             if (txtMorada.Text == string.Empty)
             {
                 labelMorada.Visible = true;
                 label25.Select();
             }
 
+            // Verifica se o campo "Cidade" está vazio
             if (txtCidade.Text == string.Empty)
             {
                 labelCidade.Visible = true;
                 label25.Select();
             }
 
+            // Verifica se o campo "Distrito" está vazio
             if (txtDistrito.Text == string.Empty)
             {
                 labelDistrito.Visible = true;
                 label25.Select();
             }
 
+            // Verifica se o campo "Código Postal" está vazio
             if (txtCP.Text == string.Empty)
             {
                 labelCP.Visible = true;
                 label25.Select();
             }
 
+            // Verifica se o campo "País" está vazio
             if (txtPais.Text == string.Empty)
             {
                 labelPais.Visible = true;
@@ -182,8 +194,13 @@ namespace Registo_Colaboradores
             }
         }
 
+        // Evento chamado quando o usuário clica no painel "panel_NovoRegisto"
+        // (provavelmente área de fundo da tela de novo registro)
         private void panel_NovoRegisto_Click(object sender, EventArgs e)
         {
+            // As mesmas verificações feitas no evento acima:
+            // Se qualquer campo estiver vazio, o respectivo label é exibido.
+
             if (textBoxNome.Text == string.Empty)
             {
                 labelNome.Visible = true;
@@ -244,6 +261,7 @@ namespace Registo_Colaboradores
                 label25.Select();
             }
         }
+
 
         #region-------------------------------TEXTBOX NOME DO CLIENTE-----------------------------------
 
