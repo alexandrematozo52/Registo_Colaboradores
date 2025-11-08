@@ -81,6 +81,7 @@
             this.txtCP = new System.Windows.Forms.TextBox();
             this.pictureBoxCP = new System.Windows.Forms.PictureBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
+            this.bt_Salvar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel_NovoRegisto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMorada)).BeginInit();
@@ -114,6 +115,7 @@
             // 
             // panel_NovoRegisto
             // 
+            this.panel_NovoRegisto.Controls.Add(this.bt_Salvar);
             this.panel_NovoRegisto.Controls.Add(this.labelPais);
             this.panel_NovoRegisto.Controls.Add(this.label7);
             this.panel_NovoRegisto.Controls.Add(this.txtPais);
@@ -735,6 +737,22 @@
             this.textBox10.Size = new System.Drawing.Size(452, 19);
             this.textBox10.TabIndex = 276;
             // 
+            // bt_Salvar
+            // 
+            this.bt_Salvar.BackColor = System.Drawing.Color.Transparent;
+            this.bt_Salvar.BackgroundImage = global::Registo_Colaboradores.Properties.Resources.disquete__1_;
+            this.bt_Salvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bt_Salvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_Salvar.FlatAppearance.BorderSize = 0;
+            this.bt_Salvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.bt_Salvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.bt_Salvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Salvar.Location = new System.Drawing.Point(1168, 527);
+            this.bt_Salvar.Name = "bt_Salvar";
+            this.bt_Salvar.Size = new System.Drawing.Size(44, 42);
+            this.bt_Salvar.TabIndex = 282;
+            this.bt_Salvar.UseVisualStyleBackColor = false;
+            // 
             // Novo_Registo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -816,5 +834,6 @@
         public System.Windows.Forms.TextBox txtCP;
         public System.Windows.Forms.PictureBox pictureBoxCP;
         public System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Button bt_Salvar;
     }
 }
