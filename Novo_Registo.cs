@@ -62,7 +62,8 @@ namespace Registo_Colaboradores
 
             //-----------------------------------------------------------------
             // EVENTOS DO TEXTBOX "TELEFONE"
-            txtTelefone.TextChanged += TextBoxTelefone_TextChanged;
+            txtTelefone.TextChanged += txtTelefone_TextChanged;
+            txtTelefone.KeyPress += txtTelefone_KeyPress;
             txtTelefone.Click += TextBoxTelefone_Click;
             txtTelefone.Leave += TextBoxTelefone_Leave;
             txtTelefone.Enter += TextBoxTelefone_Enter;
@@ -113,6 +114,7 @@ namespace Registo_Colaboradores
             txtCP.Enter += TextBoxCP_Enter;
             labelCP.Click += LabelCP_Click;
             pictureBoxCP.Click += PictureBoxCP_Click;
+            txtCP.KeyPress += txtCP_KeyPress;
 
             //-----------------------------------------------------------------
             // EVENTOS DO TEXTBOX "PAÍS"
@@ -269,7 +271,7 @@ namespace Registo_Colaboradores
         }
 
 
-        #region-------------------------------TEXTBOX NOME DO CLIENTE-----------------------------------
+        #region-------------------------------TEXTBOX NOME -----------------------------------
 
         // Evento disparado sempre que o texto do TextBox é alterado
         private void TextBoxNome_TextChanged(object sender, EventArgs e)
@@ -415,7 +417,6 @@ namespace Registo_Colaboradores
         // Evento disparado ao alterar o texto do campo Cargo
         private void TextBoxCargo_TextChanged(object sender, EventArgs e)
         {
-            // ⚠️ Correção sugerida: o "textBoxApelido.Text" aqui está incorreto — deve ser "txtCargo.Text".
             if (!string.IsNullOrEmpty(txtCargo.Text))
             {
                 string nome = txtCargo.Text;
@@ -475,14 +476,47 @@ namespace Registo_Colaboradores
 
         #region ----------------------------------- TEXTBOX TELEFONE -------------------------------------
 
-        // Esconde o label se o campo estiver vazio
-        private void TextBoxTelefone_TextChanged(object sender, EventArgs e)
+        private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (txtTelefone.Text == "")
+            // Permite apenas números e Backspace
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                labelTelefone.Visible = false;
+                e.Handled = true;
+                return;
+            }
+
+            // Impede digitar mais que 9 dígitos
+            if (!char.IsControl(e.KeyChar) && txtTelefone.Text.Length >= 9)
+            {
+                e.Handled = true;
             }
         }
+
+        // Esconde o label se o campo estiver vazio
+        private void txtTelefone_TextChanged(object sender, EventArgs e)
+        {
+            // Esconde o label se estiver vazio
+            if (txtTelefone.Text == "") 
+            { 
+                labelTelefone.Visible = false;       
+            }
+
+            // Remove qualquer caractere não numérico (caso algo seja colado)
+            string texto = new string(txtTelefone.Text.Where(char.IsDigit).ToArray());
+
+            // Limita a 9 dígitos
+            if (texto.Length > 9)
+                texto = texto.Substring(0, 9);
+
+            // Atualiza o texto formatado, se houve alteração
+            if (txtTelefone.Text != texto)
+            {
+                int pos = txtTelefone.SelectionStart;
+                txtTelefone.Text = texto;
+                txtTelefone.SelectionStart = Math.Min(pos, txtTelefone.Text.Length);
+            }
+        }
+
 
         // Esconde o label ao clicar no campo se estiver vazio
         private void TextBoxTelefone_Click(object sender, EventArgs e)
@@ -578,6 +612,21 @@ namespace Registo_Colaboradores
         // Esconde o label se o campo estiver vazio
         private void TextBoxMorada_TextChanged(object sender, EventArgs e)
         {
+            // Verifica se o campo não está vazio
+            if (!string.IsNullOrEmpty(txtMorada.Text))
+            {
+                string nome = txtMorada.Text;
+
+                // Converte todo o texto para minúsculo e capitaliza a primeira letra de cada palavra
+                nome = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(nome.ToLower());
+
+                // Atualiza o conteúdo do TextBox com o texto formatado
+                txtMorada.Text = nome;
+
+                // Posiciona o cursor no final do texto
+                txtMorada.SelectionStart = txtMorada.Text.Length;
+            }
+
             if (txtMorada.Text == "")
             {
                 labelMorada.Visible = false;
@@ -628,6 +677,21 @@ namespace Registo_Colaboradores
         // Esconde o label se o campo estiver vazio
         private void TextBoxCidade_TextChanged(object sender, EventArgs e)
         {
+            // Verifica se o campo não está vazio
+            if (!string.IsNullOrEmpty(txtCidade.Text))
+            {
+                string nome = txtCidade.Text;
+
+                // Converte todo o texto para minúsculo e capitaliza a primeira letra de cada palavra
+                nome = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(nome.ToLower());
+
+                // Atualiza o conteúdo do TextBox com o texto formatado
+                txtCidade.Text = nome;
+
+                // Posiciona o cursor no final do texto
+                txtCidade.SelectionStart = txtCidade.Text.Length;
+            }
+
             if (txtCidade.Text == "")
             {
                 labelCidade.Visible = false;
@@ -678,6 +742,21 @@ namespace Registo_Colaboradores
         // Esconde o label se o campo estiver vazio
         private void TextBoxDistrito_TextChanged(object sender, EventArgs e)
         {
+            // Verifica se o campo não está vazio
+            if (!string.IsNullOrEmpty(txtDistrito.Text))
+            {
+                string nome = txtDistrito.Text;
+
+                // Converte todo o texto para minúsculo e capitaliza a primeira letra de cada palavra
+                nome = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(nome.ToLower());
+
+                // Atualiza o conteúdo do TextBox com o texto formatado
+                txtDistrito.Text = nome;
+
+                // Posiciona o cursor no final do texto
+                txtDistrito.SelectionStart = txtDistrito.Text.Length;
+            }
+
             if (txtDistrito.Text == "")
             {
                 labelDistrito.Visible = false;
@@ -732,6 +811,38 @@ namespace Registo_Colaboradores
             {
                 labelCP.Visible = false;
             }
+
+            // Remove temporariamente o evento para evitar loop
+            txtCP.TextChanged -= TextBoxCP_TextChanged;
+
+            string texto = txtCP.Text.Replace("-", ""); // Remove o traço, caso já tenha
+            if (texto.Length > 4)
+            {
+                texto = texto.Insert(4, "-"); // Insere o traço depois do 4º dígito
+            }
+
+            txtCP.Text = texto;
+            txtCP.SelectionStart = txtCP.Text.Length; // Mantém o cursor no final
+
+            // Reassocia o evento
+            txtCP.TextChanged += TextBoxCP_TextChanged;
+        }
+
+        private void txtCP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite apenas números e Backspace
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                return;
+            }
+
+            // Impede digitar mais que 7 dígitos (sem contar o traço)
+            string texto = txtCP.Text.Replace("-", "");
+            if (!char.IsControl(e.KeyChar) && texto.Length >= 7)
+            {
+                e.Handled = true;
+            }
         }
 
         // Esconde o label ao clicar no campo
@@ -778,6 +889,21 @@ namespace Registo_Colaboradores
         // Esconde o label se o campo estiver vazio
         private void TextBoxPais_TextChanged(object sender, EventArgs e)
         {
+            // Verifica se o campo não está vazio
+            if (!string.IsNullOrEmpty(txtPais.Text))
+            {
+                string nome = txtPais.Text;
+
+                // Converte todo o texto para minúsculo e capitaliza a primeira letra de cada palavra
+                nome = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(nome.ToLower());
+
+                // Atualiza o conteúdo do TextBox com o texto formatado
+                txtPais.Text = nome;
+
+                // Posiciona o cursor no final do texto
+                txtPais.SelectionStart = txtPais.Text.Length;
+            }
+
             if (txtPais.Text == "")
             {
                 labelPais.Visible = false;
