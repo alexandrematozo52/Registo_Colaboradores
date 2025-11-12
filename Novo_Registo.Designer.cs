@@ -31,6 +31,27 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Novo_Registo));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel_NovoRegisto = new System.Windows.Forms.Panel();
+            this.bt_Salvar = new System.Windows.Forms.Button();
+            this.labelPais = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtPais = new System.Windows.Forms.TextBox();
+            this.pictureBoxPais = new System.Windows.Forms.PictureBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.labelCP = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtCP = new System.Windows.Forms.TextBox();
+            this.pictureBoxCP = new System.Windows.Forms.PictureBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.labelDistrito = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtDistrito = new System.Windows.Forms.TextBox();
+            this.pictureBoxDistrito = new System.Windows.Forms.PictureBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.labelCidade = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtCidade = new System.Windows.Forms.TextBox();
+            this.pictureBoxCidade = new System.Windows.Forms.PictureBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.labelMorada = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMorada = new System.Windows.Forms.TextBox();
@@ -61,39 +82,18 @@
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.pictureBoxNome = new System.Windows.Forms.PictureBox();
             this.textBoxEditarNome = new System.Windows.Forms.TextBox();
-            this.labelDistrito = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtDistrito = new System.Windows.Forms.TextBox();
-            this.pictureBoxDistrito = new System.Windows.Forms.PictureBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.labelCidade = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtCidade = new System.Windows.Forms.TextBox();
-            this.pictureBoxCidade = new System.Windows.Forms.PictureBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.labelPais = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtPais = new System.Windows.Forms.TextBox();
-            this.pictureBoxPais = new System.Windows.Forms.PictureBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.labelCP = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtCP = new System.Windows.Forms.TextBox();
-            this.pictureBoxCP = new System.Windows.Forms.PictureBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.bt_Salvar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel_NovoRegisto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPais)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDistrito)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMorada)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTelefone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCargo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxApelido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDistrito)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCidade)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPais)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCP)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -171,6 +171,249 @@
             this.panel_NovoRegisto.Name = "panel_NovoRegisto";
             this.panel_NovoRegisto.Size = new System.Drawing.Size(1268, 577);
             this.panel_NovoRegisto.TabIndex = 0;
+            // 
+            // bt_Salvar
+            // 
+            this.bt_Salvar.BackColor = System.Drawing.Color.Transparent;
+            this.bt_Salvar.BackgroundImage = global::Registo_Colaboradores.Properties.Resources.disquete__1_;
+            this.bt_Salvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bt_Salvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_Salvar.FlatAppearance.BorderSize = 0;
+            this.bt_Salvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.bt_Salvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.bt_Salvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Salvar.Location = new System.Drawing.Point(1168, 527);
+            this.bt_Salvar.Name = "bt_Salvar";
+            this.bt_Salvar.Size = new System.Drawing.Size(44, 42);
+            this.bt_Salvar.TabIndex = 282;
+            this.bt_Salvar.UseVisualStyleBackColor = false;
+            this.bt_Salvar.Click += new System.EventHandler(this.bt_Salvar_Click);
+            // 
+            // labelPais
+            // 
+            this.labelPais.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelPais.AutoSize = true;
+            this.labelPais.BackColor = System.Drawing.Color.White;
+            this.labelPais.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.labelPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPais.ForeColor = System.Drawing.Color.LightGray;
+            this.labelPais.Location = new System.Drawing.Point(751, 463);
+            this.labelPais.Name = "labelPais";
+            this.labelPais.Size = new System.Drawing.Size(99, 20);
+            this.labelPais.TabIndex = 279;
+            this.labelPais.Text = "Inserir País";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(745, 422);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(39, 20);
+            this.label7.TabIndex = 278;
+            this.label7.Text = "País";
+            // 
+            // txtPais
+            // 
+            this.txtPais.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPais.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPais.Location = new System.Drawing.Point(755, 463);
+            this.txtPais.Name = "txtPais";
+            this.txtPais.Size = new System.Drawing.Size(452, 19);
+            this.txtPais.TabIndex = 277;
+            // 
+            // pictureBoxPais
+            // 
+            this.pictureBoxPais.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxPais.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxPais.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxPais.BackgroundImage")));
+            this.pictureBoxPais.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxPais.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.pictureBoxPais.Location = new System.Drawing.Point(739, 448);
+            this.pictureBoxPais.Name = "pictureBoxPais";
+            this.pictureBoxPais.Size = new System.Drawing.Size(473, 50);
+            this.pictureBoxPais.TabIndex = 280;
+            this.pictureBoxPais.TabStop = false;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(750, 463);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(452, 19);
+            this.textBox7.TabIndex = 281;
+            // 
+            // labelCP
+            // 
+            this.labelCP.AutoSize = true;
+            this.labelCP.BackColor = System.Drawing.Color.White;
+            this.labelCP.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.labelCP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCP.ForeColor = System.Drawing.Color.LightGray;
+            this.labelCP.Location = new System.Drawing.Point(66, 463);
+            this.labelCP.Name = "labelCP";
+            this.labelCP.Size = new System.Drawing.Size(176, 20);
+            this.labelCP.TabIndex = 274;
+            this.labelCP.Text = "Inserir Código Postal";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(60, 422);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(107, 20);
+            this.label10.TabIndex = 273;
+            this.label10.Text = "Código Postal";
+            // 
+            // txtCP
+            // 
+            this.txtCP.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCP.Location = new System.Drawing.Point(65, 463);
+            this.txtCP.Name = "txtCP";
+            this.txtCP.Size = new System.Drawing.Size(452, 19);
+            this.txtCP.TabIndex = 272;
+            // 
+            // pictureBoxCP
+            // 
+            this.pictureBoxCP.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxCP.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxCP.BackgroundImage")));
+            this.pictureBoxCP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxCP.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.pictureBoxCP.Location = new System.Drawing.Point(54, 448);
+            this.pictureBoxCP.Name = "pictureBoxCP";
+            this.pictureBoxCP.Size = new System.Drawing.Size(473, 50);
+            this.pictureBoxCP.TabIndex = 275;
+            this.pictureBoxCP.TabStop = false;
+            // 
+            // textBox10
+            // 
+            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox10.Location = new System.Drawing.Point(65, 463);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(452, 19);
+            this.textBox10.TabIndex = 276;
+            // 
+            // labelDistrito
+            // 
+            this.labelDistrito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelDistrito.AutoSize = true;
+            this.labelDistrito.BackColor = System.Drawing.Color.White;
+            this.labelDistrito.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.labelDistrito.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDistrito.ForeColor = System.Drawing.Color.LightGray;
+            this.labelDistrito.Location = new System.Drawing.Point(751, 364);
+            this.labelDistrito.Name = "labelDistrito";
+            this.labelDistrito.Size = new System.Drawing.Size(123, 20);
+            this.labelDistrito.TabIndex = 269;
+            this.labelDistrito.Text = "Inserir Distrito";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(745, 323);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 20);
+            this.label5.TabIndex = 268;
+            this.label5.Text = "Distrito";
+            // 
+            // txtDistrito
+            // 
+            this.txtDistrito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDistrito.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDistrito.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDistrito.Location = new System.Drawing.Point(750, 364);
+            this.txtDistrito.Name = "txtDistrito";
+            this.txtDistrito.Size = new System.Drawing.Size(452, 19);
+            this.txtDistrito.TabIndex = 267;
+            // 
+            // pictureBoxDistrito
+            // 
+            this.pictureBoxDistrito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxDistrito.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxDistrito.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxDistrito.BackgroundImage")));
+            this.pictureBoxDistrito.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxDistrito.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.pictureBoxDistrito.Location = new System.Drawing.Point(739, 349);
+            this.pictureBoxDistrito.Name = "pictureBoxDistrito";
+            this.pictureBoxDistrito.Size = new System.Drawing.Size(473, 50);
+            this.pictureBoxDistrito.TabIndex = 270;
+            this.pictureBoxDistrito.TabStop = false;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(750, 364);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(452, 19);
+            this.textBox5.TabIndex = 271;
+            // 
+            // labelCidade
+            // 
+            this.labelCidade.AutoSize = true;
+            this.labelCidade.BackColor = System.Drawing.Color.White;
+            this.labelCidade.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.labelCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCidade.ForeColor = System.Drawing.Color.LightGray;
+            this.labelCidade.Location = new System.Drawing.Point(66, 364);
+            this.labelCidade.Name = "labelCidade";
+            this.labelCidade.Size = new System.Drawing.Size(121, 20);
+            this.labelCidade.TabIndex = 264;
+            this.labelCidade.Text = "Inserir Cidade";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(60, 323);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(59, 20);
+            this.label8.TabIndex = 263;
+            this.label8.Text = "Cidade";
+            // 
+            // txtCidade
+            // 
+            this.txtCidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCidade.Location = new System.Drawing.Point(65, 364);
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(452, 19);
+            this.txtCidade.TabIndex = 262;
+            // 
+            // pictureBoxCidade
+            // 
+            this.pictureBoxCidade.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxCidade.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxCidade.BackgroundImage")));
+            this.pictureBoxCidade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxCidade.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.pictureBoxCidade.Location = new System.Drawing.Point(54, 349);
+            this.pictureBoxCidade.Name = "pictureBoxCidade";
+            this.pictureBoxCidade.Size = new System.Drawing.Size(473, 50);
+            this.pictureBoxCidade.TabIndex = 265;
+            this.pictureBoxCidade.TabStop = false;
+            // 
+            // textBox8
+            // 
+            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.Location = new System.Drawing.Point(65, 364);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(452, 19);
+            this.textBox8.TabIndex = 266;
             // 
             // labelMorada
             // 
@@ -511,248 +754,6 @@
             this.textBoxEditarNome.Size = new System.Drawing.Size(452, 19);
             this.textBoxEditarNome.TabIndex = 236;
             // 
-            // labelDistrito
-            // 
-            this.labelDistrito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelDistrito.AutoSize = true;
-            this.labelDistrito.BackColor = System.Drawing.Color.White;
-            this.labelDistrito.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.labelDistrito.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDistrito.ForeColor = System.Drawing.Color.LightGray;
-            this.labelDistrito.Location = new System.Drawing.Point(751, 364);
-            this.labelDistrito.Name = "labelDistrito";
-            this.labelDistrito.Size = new System.Drawing.Size(123, 20);
-            this.labelDistrito.TabIndex = 269;
-            this.labelDistrito.Text = "Inserir Distrito";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(745, 323);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 20);
-            this.label5.TabIndex = 268;
-            this.label5.Text = "Distrito";
-            // 
-            // txtDistrito
-            // 
-            this.txtDistrito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDistrito.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDistrito.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDistrito.Location = new System.Drawing.Point(750, 364);
-            this.txtDistrito.Name = "txtDistrito";
-            this.txtDistrito.Size = new System.Drawing.Size(452, 19);
-            this.txtDistrito.TabIndex = 267;
-            // 
-            // pictureBoxDistrito
-            // 
-            this.pictureBoxDistrito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxDistrito.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxDistrito.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxDistrito.BackgroundImage")));
-            this.pictureBoxDistrito.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxDistrito.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.pictureBoxDistrito.Location = new System.Drawing.Point(739, 349);
-            this.pictureBoxDistrito.Name = "pictureBoxDistrito";
-            this.pictureBoxDistrito.Size = new System.Drawing.Size(473, 50);
-            this.pictureBoxDistrito.TabIndex = 270;
-            this.pictureBoxDistrito.TabStop = false;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(750, 364);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(452, 19);
-            this.textBox5.TabIndex = 271;
-            // 
-            // labelCidade
-            // 
-            this.labelCidade.AutoSize = true;
-            this.labelCidade.BackColor = System.Drawing.Color.White;
-            this.labelCidade.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.labelCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCidade.ForeColor = System.Drawing.Color.LightGray;
-            this.labelCidade.Location = new System.Drawing.Point(66, 364);
-            this.labelCidade.Name = "labelCidade";
-            this.labelCidade.Size = new System.Drawing.Size(121, 20);
-            this.labelCidade.TabIndex = 264;
-            this.labelCidade.Text = "Inserir Cidade";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(60, 323);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 20);
-            this.label8.TabIndex = 263;
-            this.label8.Text = "Cidade";
-            // 
-            // txtCidade
-            // 
-            this.txtCidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCidade.Location = new System.Drawing.Point(65, 364);
-            this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(452, 19);
-            this.txtCidade.TabIndex = 262;
-            // 
-            // pictureBoxCidade
-            // 
-            this.pictureBoxCidade.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxCidade.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxCidade.BackgroundImage")));
-            this.pictureBoxCidade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxCidade.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.pictureBoxCidade.Location = new System.Drawing.Point(54, 349);
-            this.pictureBoxCidade.Name = "pictureBoxCidade";
-            this.pictureBoxCidade.Size = new System.Drawing.Size(473, 50);
-            this.pictureBoxCidade.TabIndex = 265;
-            this.pictureBoxCidade.TabStop = false;
-            // 
-            // textBox8
-            // 
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(65, 364);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(452, 19);
-            this.textBox8.TabIndex = 266;
-            // 
-            // labelPais
-            // 
-            this.labelPais.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelPais.AutoSize = true;
-            this.labelPais.BackColor = System.Drawing.Color.White;
-            this.labelPais.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.labelPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPais.ForeColor = System.Drawing.Color.LightGray;
-            this.labelPais.Location = new System.Drawing.Point(751, 463);
-            this.labelPais.Name = "labelPais";
-            this.labelPais.Size = new System.Drawing.Size(99, 20);
-            this.labelPais.TabIndex = 279;
-            this.labelPais.Text = "Inserir País";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(745, 422);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 20);
-            this.label7.TabIndex = 278;
-            this.label7.Text = "País";
-            // 
-            // txtPais
-            // 
-            this.txtPais.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPais.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPais.Location = new System.Drawing.Point(755, 463);
-            this.txtPais.Name = "txtPais";
-            this.txtPais.Size = new System.Drawing.Size(452, 19);
-            this.txtPais.TabIndex = 277;
-            // 
-            // pictureBoxPais
-            // 
-            this.pictureBoxPais.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxPais.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxPais.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxPais.BackgroundImage")));
-            this.pictureBoxPais.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxPais.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.pictureBoxPais.Location = new System.Drawing.Point(739, 448);
-            this.pictureBoxPais.Name = "pictureBoxPais";
-            this.pictureBoxPais.Size = new System.Drawing.Size(473, 50);
-            this.pictureBoxPais.TabIndex = 280;
-            this.pictureBoxPais.TabStop = false;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(750, 463);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(452, 19);
-            this.textBox7.TabIndex = 281;
-            // 
-            // labelCP
-            // 
-            this.labelCP.AutoSize = true;
-            this.labelCP.BackColor = System.Drawing.Color.White;
-            this.labelCP.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.labelCP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCP.ForeColor = System.Drawing.Color.LightGray;
-            this.labelCP.Location = new System.Drawing.Point(66, 463);
-            this.labelCP.Name = "labelCP";
-            this.labelCP.Size = new System.Drawing.Size(176, 20);
-            this.labelCP.TabIndex = 274;
-            this.labelCP.Text = "Inserir Código Postal";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(60, 422);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(107, 20);
-            this.label10.TabIndex = 273;
-            this.label10.Text = "Código Postal";
-            // 
-            // txtCP
-            // 
-            this.txtCP.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCP.Location = new System.Drawing.Point(65, 463);
-            this.txtCP.Name = "txtCP";
-            this.txtCP.Size = new System.Drawing.Size(452, 19);
-            this.txtCP.TabIndex = 272;
-            // 
-            // pictureBoxCP
-            // 
-            this.pictureBoxCP.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxCP.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxCP.BackgroundImage")));
-            this.pictureBoxCP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxCP.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.pictureBoxCP.Location = new System.Drawing.Point(54, 448);
-            this.pictureBoxCP.Name = "pictureBoxCP";
-            this.pictureBoxCP.Size = new System.Drawing.Size(473, 50);
-            this.pictureBoxCP.TabIndex = 275;
-            this.pictureBoxCP.TabStop = false;
-            // 
-            // textBox10
-            // 
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(65, 463);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(452, 19);
-            this.textBox10.TabIndex = 276;
-            // 
-            // bt_Salvar
-            // 
-            this.bt_Salvar.BackColor = System.Drawing.Color.Transparent;
-            this.bt_Salvar.BackgroundImage = global::Registo_Colaboradores.Properties.Resources.disquete__1_;
-            this.bt_Salvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bt_Salvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_Salvar.FlatAppearance.BorderSize = 0;
-            this.bt_Salvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.bt_Salvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.bt_Salvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Salvar.Location = new System.Drawing.Point(1168, 527);
-            this.bt_Salvar.Name = "bt_Salvar";
-            this.bt_Salvar.Size = new System.Drawing.Size(44, 42);
-            this.bt_Salvar.TabIndex = 282;
-            this.bt_Salvar.UseVisualStyleBackColor = false;
-            // 
             // Novo_Registo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -766,16 +767,16 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel_NovoRegisto.ResumeLayout(false);
             this.panel_NovoRegisto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPais)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDistrito)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCidade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMorada)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTelefone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCargo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxApelido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDistrito)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCidade)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPais)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCP)).EndInit();
             this.ResumeLayout(false);
 
         }

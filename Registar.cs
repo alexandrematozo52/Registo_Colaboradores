@@ -44,7 +44,7 @@ namespace Registo_Colaboradores
                       ,[EmailAddress] as 'Endereço de E-mail'
                       ,[AddressLine1] as 'Morada'
                       ,[City] as 'Cidade'
-                      ,[StateProvinceName] as 'Província'
+                      ,[StateProvinceName] as 'Distrito'
                       ,[PostalCode] as 'Código Postal'
                       ,[CountryRegionName] 'País'
                   FROM [AdventureWorks2019].[HumanResources].[vEmployee]

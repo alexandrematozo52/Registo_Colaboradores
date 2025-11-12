@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -949,5 +950,88 @@ namespace Registo_Colaboradores
 
         #endregion
 
+        private void bt_Salvar_Click(object sender, EventArgs e)
+        {
+            string connectionString = @"Data Source=AM\SQLEXPRESS; Initial Catalog=AdventureWorks2019; User ID=sa; Password=Flamengo2019";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                SqlTransaction tran = conn.BeginTransaction();
+
+                try
+                {
+                    // 1. Inserir pessoa
+                    SqlCommand cmdPerson = new SqlCommand(@"
+                INSERT INTO Person.Person (FirstName, LastName)
+                VALUES (@FirstName, @LastName);
+                SELECT SCOPE_IDENTITY();", conn, tran);
+
+                    cmdPerson.Parameters.AddWithValue("@FirstName", textBoxNome.Text);
+                    cmdPerson.Parameters.AddWithValue("@LastName", textBoxApelido.Text);
+
+                    int personId = Convert.ToInt32(cmdPerson.ExecuteScalar());
+
+                    // 2. Inserir funcionário
+                    SqlCommand cmdEmployee = new SqlCommand(@"
+                INSERT INTO HumanResources.Employee (BusinessEntityID, JobTitle)
+                VALUES (@PersonID, @JobTitle);", conn, tran);
+
+                    cmdEmployee.Parameters.AddWithValue("@PersonID", personId);
+                    cmdEmployee.Parameters.AddWithValue("@JobTitle", txtCargo.Text);
+                    cmdEmployee.ExecuteNonQuery();
+
+                    // 3. Inserir endereço
+                    SqlCommand cmdAddress = new SqlCommand(@"
+                INSERT INTO Person.Address (AddressLine1, City, StateProvinceID, PostalCode)
+                VALUES (@AddressLine1, @City, @StateProvinceID, @PostalCode);
+                SELECT SCOPE_IDENTITY();", conn, tran);
+
+                    cmdAddress.Parameters.AddWithValue("@AddressLine1", txtMorada.Text);
+                    cmdAddress.Parameters.AddWithValue("@City", txtCidade.Text);
+                    cmdAddress.Parameters.AddWithValue("@StateProvinceID", txtDistrito.Text);
+                    cmdAddress.Parameters.AddWithValue("@PostalCode", txtCP.Text);
+
+                    int addressId = Convert.ToInt32(cmdAddress.ExecuteScalar());
+
+                    // 4. Relacionar pessoa e endereço
+                    SqlCommand cmdBusinessAddress = new SqlCommand(@"
+                INSERT INTO Person.BusinessEntityAddress (BusinessEntityID, AddressID, AddressTypeID)
+                VALUES (@PersonID, @AddressID, 1);", conn, tran);
+
+                    cmdBusinessAddress.Parameters.AddWithValue("@PersonID", personId);
+                    cmdBusinessAddress.Parameters.AddWithValue("@AddressID", addressId);
+                    cmdBusinessAddress.ExecuteNonQuery();
+
+                    // 5. Inserir e-mail
+                    SqlCommand cmdEmail = new SqlCommand(@"
+                INSERT INTO Person.EmailAddress (BusinessEntityID, EmailAddress)
+                VALUES (@PersonID, @EmailAddress);", conn, tran);
+
+                    cmdEmail.Parameters.AddWithValue("@PersonID", personId);
+                    cmdEmail.Parameters.AddWithValue("@EmailAddress", txtEmail.Text);
+                    cmdEmail.ExecuteNonQuery();
+
+                    // 6. Inserir telefone
+                    SqlCommand cmdPhone = new SqlCommand(@"
+                INSERT INTO Person.PersonPhone (BusinessEntityID, PhoneNumber, PhoneNumberTypeID)
+                VALUES (@PersonID, @PhoneNumber, 1);", conn, tran);
+
+                    cmdPhone.Parameters.AddWithValue("@PersonID", personId);
+                    cmdPhone.Parameters.AddWithValue("@PhoneNumber", txtTelefone.Text);
+                    cmdPhone.ExecuteNonQuery();
+
+                    tran.Commit();
+
+                    MessageBox.Show("Registo salvo com sucesso!");
+                }
+                catch (Exception ex)
+                {
+                    tran.Rollback();
+                    MessageBox.Show("Erro ao salvar: " + ex.Message);
+                }
+            }
+        }
     }
 }
