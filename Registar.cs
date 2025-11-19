@@ -60,7 +60,6 @@ namespace Registo_Colaboradores
         private void Carregar_Dados()
         {
             string connectionString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
-            //string connectionString = @"Data Source=AM\SQLEXPRESS; Initial Catalog=Colaboradores; User ID=sa; Password=Flamengo2019";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
