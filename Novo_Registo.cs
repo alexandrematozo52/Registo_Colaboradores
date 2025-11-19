@@ -13,6 +13,8 @@ namespace Registo_Colaboradores
 {
     public partial class Novo_Registo : Form
     {
+        public event Action Carregar_DataGrid;
+
         public Novo_Registo()
         {
             InitializeComponent();
@@ -952,46 +954,60 @@ namespace Registo_Colaboradores
 
         private void bt_Salvar_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=AM\SQLEXPRESS; Initial Catalog=Colaboradores; User ID=sa; Password=Flamengo2019";
+            string email = txtEmail.Text;
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            if (email.Contains("@"))
             {
-                try
-                {
-                    conn.Open();
+                string connectionString = @"Data Source=AM\SQLEXPRESS; Initial Catalog=Colaboradores; User ID=sa; Password=Flamengo2019";
 
-                    // Comando SQL com parâmetros
-                    string sql = @"
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    try
+                    {
+                        conn.Open();
+
+                        // Comando SQL com parâmetros
+                        string sql = @"
                     INSERT INTO [Colaboradores].[dbo].[Colaboradores]
                     (Colaborador, Apelido, Cargo, Telemóvel, Email, Morada, Cidade, Distrito, [Código Postal], País)
                     VALUES
                     (@Colaborador, @Apelido, @Cargo, @Telemovel, @Email, @Morada, @Cidade, @Distrito, @CodigoPostal, @Pais);
-                    SELECT SCOPE_IDENTITY();"; 
+                    SELECT SCOPE_IDENTITY();";
 
-                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                        using (SqlCommand cmd = new SqlCommand(sql, conn))
+                        {
+                            // Substitua os valores pelos campos do seu formulário
+                            cmd.Parameters.AddWithValue("@Colaborador", textBoxNome.Text);
+                            cmd.Parameters.AddWithValue("@Apelido", textBoxApelido.Text);
+                            cmd.Parameters.AddWithValue("@Cargo", txtCargo.Text);
+                            cmd.Parameters.AddWithValue("@Telemovel", txtTelemovel.Text);
+                            cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
+                            cmd.Parameters.AddWithValue("@Morada", txtMorada.Text);
+                            cmd.Parameters.AddWithValue("@Cidade", txtCidade.Text);
+                            cmd.Parameters.AddWithValue("@Distrito", txtDistrito.Text);
+                            cmd.Parameters.AddWithValue("@CodigoPostal", txtCP.Text);
+                            cmd.Parameters.AddWithValue("@Pais", txtPais.Text);
+
+                            // Executa e captura o ID gerado
+                            int newId = Convert.ToInt32(cmd.ExecuteScalar());
+
+                            Carregar_DataGrid?.Invoke();
+                            this.Close();
+                            return;
+                        }
+                    }
+                    catch (Exception ex)
                     {
-                        // Substitua os valores pelos campos do seu formulário
-                        cmd.Parameters.AddWithValue("@Colaborador", textBoxNome.Text);
-                        cmd.Parameters.AddWithValue("@Apelido", textBoxApelido.Text);
-                        cmd.Parameters.AddWithValue("@Cargo", txtCargo.Text);
-                        cmd.Parameters.AddWithValue("@Telemovel", txtTelemovel.Text);
-                        cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
-                        cmd.Parameters.AddWithValue("@Morada", txtMorada.Text);
-                        cmd.Parameters.AddWithValue("@Cidade", txtCidade.Text);
-                        cmd.Parameters.AddWithValue("@Distrito", txtDistrito.Text);
-                        cmd.Parameters.AddWithValue("@CodigoPostal", txtCP.Text);
-                        cmd.Parameters.AddWithValue("@Pais", txtPais.Text);
-
-                        // Executa e captura o ID gerado
-                        int newId = Convert.ToInt32(cmd.ExecuteScalar());
-                        MessageBox.Show($"Colaborador inserido com sucesso! ID: {newId}");
+                        MessageBox.Show("Erro ao salvar o colaborador: " + ex.Message);
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao salvar o colaborador: " + ex.Message);
-                }
             }
+            else
+            {
+                MessageBox.Show("Insira um E-mail Válido");
+                return;
+            }
+
         }
     }
 }

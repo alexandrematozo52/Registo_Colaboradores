@@ -30,6 +30,8 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registar));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -37,13 +39,13 @@
             this.bt_Add = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.DataGridView_Colaboradores = new Zuby.ADGV.AdvancedDataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.DataGridView_Colaboradores = new Zuby.ADGV.AdvancedDataGridView();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Colaboradores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Colaboradores)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -135,42 +137,6 @@
             this.panel2.Size = new System.Drawing.Size(1376, 657);
             this.panel2.TabIndex = 0;
             // 
-            // DataGridView_Colaboradores
-            // 
-            this.DataGridView_Colaboradores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DataGridView_Colaboradores.BackgroundColor = System.Drawing.Color.White;
-            this.DataGridView_Colaboradores.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridView_Colaboradores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.DataGridView_Colaboradores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView_Colaboradores.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DataGridView_Colaboradores.FilterAndSortEnabled = true;
-            this.DataGridView_Colaboradores.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.DataGridView_Colaboradores.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.DataGridView_Colaboradores.Location = new System.Drawing.Point(15, 12);
-            this.DataGridView_Colaboradores.MaxFilterButtonImageHeight = 23;
-            this.DataGridView_Colaboradores.Name = "DataGridView_Colaboradores";
-            this.DataGridView_Colaboradores.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DataGridView_Colaboradores.RowHeadersVisible = false;
-            this.DataGridView_Colaboradores.Size = new System.Drawing.Size(1348, 642);
-            this.DataGridView_Colaboradores.SortStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.DataGridView_Colaboradores.TabIndex = 0;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -182,6 +148,54 @@
             this.pictureBox1.Size = new System.Drawing.Size(1373, 654);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // DataGridView_Colaboradores
+            // 
+            this.DataGridView_Colaboradores.AllowUserToAddRows = false;
+            this.DataGridView_Colaboradores.AllowUserToResizeColumns = false;
+            this.DataGridView_Colaboradores.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.DataGridView_Colaboradores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DataGridView_Colaboradores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DataGridView_Colaboradores.BackgroundColor = System.Drawing.Color.White;
+            this.DataGridView_Colaboradores.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DataGridView_Colaboradores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.DataGridView_Colaboradores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView_Colaboradores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DataGridView_Colaboradores.ColumnHeadersHeight = 15;
+            this.DataGridView_Colaboradores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView_Colaboradores.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DataGridView_Colaboradores.FilterAndSortEnabled = true;
+            this.DataGridView_Colaboradores.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.DataGridView_Colaboradores.GridColor = System.Drawing.Color.WhiteSmoke;
+            this.DataGridView_Colaboradores.Location = new System.Drawing.Point(11, 12);
+            this.DataGridView_Colaboradores.MaxFilterButtonImageHeight = 23;
+            this.DataGridView_Colaboradores.Name = "DataGridView_Colaboradores";
+            this.DataGridView_Colaboradores.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DataGridView_Colaboradores.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.DataGridView_Colaboradores.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.DataGridView_Colaboradores.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.DataGridView_Colaboradores.Size = new System.Drawing.Size(1350, 638);
+            this.DataGridView_Colaboradores.SortStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.DataGridView_Colaboradores.TabIndex = 75;
             // 
             // Registar
             // 
@@ -199,8 +213,8 @@
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Colaboradores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Colaboradores)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -213,8 +227,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
-        private Zuby.ADGV.AdvancedDataGridView DataGridView_Colaboradores;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public Zuby.ADGV.AdvancedDataGridView DataGridView_Colaboradores;
     }
 }
 

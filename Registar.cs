@@ -86,8 +86,18 @@ namespace Registo_Colaboradores
 
                 DataGridView_Colaboradores.DataSource = dt;
 
-                DataGridView_Colaboradores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                //DataGridView_Colaboradores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
+                DataGridView_Colaboradores.Columns["Colaborador"].Width = 170;
+                DataGridView_Colaboradores.Columns["Apelido"].Width = 170;
+                DataGridView_Colaboradores.Columns["Cargo"].Width = 250;
+                DataGridView_Colaboradores.Columns["Telemóvel"].Width = 250;
+                DataGridView_Colaboradores.Columns["Email"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                DataGridView_Colaboradores.Columns["Morada"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                DataGridView_Colaboradores.Columns["Cidade"].Width = 250;
+                DataGridView_Colaboradores.Columns["Distrito"].Width = 250;
+                DataGridView_Colaboradores.Columns["Código Postal"].Width = 250;
+                DataGridView_Colaboradores.Columns["País"].Width = 250;
             }
 
         }
@@ -185,6 +195,13 @@ namespace Registo_Colaboradores
         private void bt_Add_Click(object sender, EventArgs e)
         {
             Novo_Registo _Registo = new Novo_Registo();
+
+            // Evento para atualizar o grid quando salvar
+            _Registo.Carregar_DataGrid += () =>
+            {
+                Carregar_Dados(); // Recarrega o DataGridView automaticamente
+            };
+
             _Registo.ShowDialog();
         }
     }
