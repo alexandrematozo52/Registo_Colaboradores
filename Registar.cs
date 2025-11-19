@@ -10,6 +10,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace Registo_Colaboradores
 {
@@ -58,7 +59,8 @@ namespace Registo_Colaboradores
         #region Metodos DataGridView
         private void Carregar_Dados()
         {
-            string connectionString = @"Data Source=AM\SQLEXPRESS; Initial Catalog=Colaboradores; User ID=sa; Password=Flamengo2019";
+            string connectionString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
+            //string connectionString = @"Data Source=AM\SQLEXPRESS; Initial Catalog=Colaboradores; User ID=sa; Password=Flamengo2019";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {

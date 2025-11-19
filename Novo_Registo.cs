@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -970,7 +971,7 @@ namespace Registo_Colaboradores
 
             if (email.Contains("@"))
             {
-                string connectionString = @"Data Source=AM\SQLEXPRESS; Initial Catalog=Colaboradores; User ID=sa; Password=Flamengo2019";
+                string connectionString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
 
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
@@ -1030,7 +1031,7 @@ namespace Registo_Colaboradores
 
             if (email.Contains("@"))
             {
-                string connectionString = @"Data Source=AM\SQLEXPRESS; Initial Catalog=Colaboradores; User ID=sa; Password=Flamengo2019";
+                string connectionString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
 
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
