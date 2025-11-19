@@ -21,6 +21,7 @@ namespace Registo_Colaboradores
         public Registar()
         {
             InitializeComponent();
+            this.Load += new EventHandler(Registar_Load);
 
             DataGridView_Colaboradores.DataBindingComplete += DataGridView_Colaboradores_DataBindingComplete;
             
@@ -30,6 +31,10 @@ namespace Registo_Colaboradores
 
             DataGridView_Colaboradores.CellClick += DataGridView_Colaboradores_CellClick;
 
+        }
+
+        private void Registar_Load(object sender, EventArgs e)
+        {
             DefinirPictureBoxDataGridCircular(pictureBox1);
         }
 
@@ -45,8 +50,6 @@ namespace Registo_Colaboradores
             path.AddArc(pictureBox.Width - (radius * 2), pictureBox.Height - (radius * 2), radius * 2, radius * 2, 0, 90); // canto inferior direito
             path.AddArc(0, pictureBox.Height - (radius * 2), radius * 2, radius * 2, 90, 90); // canto inferior esquerdo
             path.CloseFigure();
-
-
 
             // Atribua a região à PictureBox
             pictureBox.Region = new Region(path);

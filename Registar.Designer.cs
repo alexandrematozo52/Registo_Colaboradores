@@ -127,6 +127,7 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.DataGridView_Colaboradores);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(3, 3);
@@ -161,12 +162,12 @@
             this.DataGridView_Colaboradores.FilterAndSortEnabled = true;
             this.DataGridView_Colaboradores.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
             this.DataGridView_Colaboradores.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.DataGridView_Colaboradores.Location = new System.Drawing.Point(8, 8);
+            this.DataGridView_Colaboradores.Location = new System.Drawing.Point(15, 12);
             this.DataGridView_Colaboradores.MaxFilterButtonImageHeight = 23;
             this.DataGridView_Colaboradores.Name = "DataGridView_Colaboradores";
             this.DataGridView_Colaboradores.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataGridView_Colaboradores.RowHeadersVisible = false;
-            this.DataGridView_Colaboradores.Size = new System.Drawing.Size(1360, 640);
+            this.DataGridView_Colaboradores.Size = new System.Drawing.Size(1348, 642);
             this.DataGridView_Colaboradores.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.DataGridView_Colaboradores.TabIndex = 0;
             // 
@@ -176,10 +177,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1376, 657);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.Size = new System.Drawing.Size(1373, 654);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
