@@ -22,19 +22,18 @@ namespace Registo_Colaboradores
         {
             InitializeComponent();
             this.Load += new EventHandler(Registar_Load);
-
-            DataGridView_Colaboradores.DataBindingComplete += DataGridView_Colaboradores_DataBindingComplete;
             
-            Carregar_Dados();
-
-            ConfigurarDataGridViewHover();
-
-            DataGridView_Colaboradores.CellClick += DataGridView_Colaboradores_CellClick;
+            
 
         }
 
         private void Registar_Load(object sender, EventArgs e)
         {
+            Carregar_Dados();
+            ConfigurarDataGridViewHover();
+            DataGridView_Colaboradores.CellClick += DataGridView_Colaboradores_CellClick;
+            DataGridView_Colaboradores.CellDoubleClick += DataGridView_Colaboradores_CellDoubleClick;
+
             DefinirPictureBoxDataGridCircular(pictureBox1);
         }
 
@@ -56,6 +55,7 @@ namespace Registo_Colaboradores
             pictureBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
         }
 
+        #region Metodos DataGridView
         private void Carregar_Dados()
         {
             string connectionString = @"Data Source=AM\SQLEXPRESS; Initial Catalog=Colaboradores; User ID=sa; Password=Flamengo2019";
@@ -63,7 +63,8 @@ namespace Registo_Colaboradores
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = @"SELECT
-                       Colaborador
+                       ID
+                      ,Colaborador
                       ,Apelido 
                       ,Cargo
                       ,[Telemóvel]
@@ -86,7 +87,7 @@ namespace Registo_Colaboradores
 
                 DataGridView_Colaboradores.DataSource = dt;
 
-                //DataGridView_Colaboradores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                DataGridView_Colaboradores.Columns["ID"].Visible = false;
 
                 DataGridView_Colaboradores.Columns["Colaborador"].Width = 170;
                 DataGridView_Colaboradores.Columns["Apelido"].Width = 170;
@@ -101,16 +102,6 @@ namespace Registo_Colaboradores
             }
 
         }
-
-        private void DataGridView_Colaboradores_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            if (DataGridView_Colaboradores.Columns.Contains("Endereço de E-mail"))
-            {
-                DataGridView_Colaboradores.Columns["Cargo"].Width = 270;
-                DataGridView_Colaboradores.Columns["Endereço de E-mail"].Width = 270;
-            }
-        }
-
         // Handler separado para clique no botão
         private void DataGridView_Colaboradores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -192,6 +183,82 @@ namespace Registo_Colaboradores
             }
         }
 
+        private void DataGridView_Colaboradores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                // Verifica se o clique foi em uma célula válida
+                if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                    return;
+
+                // Verifica se há dados na linha
+                if (DataGridView_Colaboradores.Rows[e.RowIndex].Cells[0].Value != null)
+                {
+                    int ID = Convert.ToInt32(DataGridView_Colaboradores.Rows[e.RowIndex].Cells[0].Value);
+                    string colaborador = DataGridView_Colaboradores.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    string apelido = DataGridView_Colaboradores.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    string cargo = DataGridView_Colaboradores.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    string telemovel = DataGridView_Colaboradores.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    string email = DataGridView_Colaboradores.Rows[e.RowIndex].Cells[5].Value.ToString();
+                    string morada = DataGridView_Colaboradores.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    string cidade = DataGridView_Colaboradores.Rows[e.RowIndex].Cells[7].Value.ToString();
+                    string distrito = DataGridView_Colaboradores.Rows[e.RowIndex].Cells[8].Value.ToString();
+                    string cp = DataGridView_Colaboradores.Rows[e.RowIndex].Cells[9].Value.ToString();
+                    string pais = DataGridView_Colaboradores.Rows[e.RowIndex].Cells[10].Value.ToString();
+
+                    Novo_Registo novo_Registo = new Novo_Registo();
+
+                    novo_Registo.ID = ID;
+                    novo_Registo.textBoxNome.Text = colaborador;
+                    novo_Registo.textBoxApelido.Text = apelido;
+                    novo_Registo.txtCargo.Text = cargo;
+                    novo_Registo.txtTelemovel.Text = telemovel;
+                    novo_Registo.txtEmail.Text = email;
+                    novo_Registo.txtMorada.Text = morada;
+                    novo_Registo.txtCidade.Text = cidade;
+                    novo_Registo.txtDistrito.Text = distrito;
+                    novo_Registo.txtCP.Text = cp;
+                    novo_Registo.txtPais.Text = pais;
+
+                    novo_Registo.labelNome.Visible = false;
+                    novo_Registo.labelApelido.Visible = false;
+                    novo_Registo.labelCargo.Visible = false;
+                    novo_Registo.labelEmail.Visible = false;
+                    novo_Registo.labelTelefone.Visible = false;
+                    novo_Registo.labelMorada.Visible = false;
+                    novo_Registo.labelCidade.Visible = false;
+                    novo_Registo.labelMorada.Visible = false;
+                    novo_Registo.labelCP.Visible = false;
+                    novo_Registo.labelDistrito.Visible = false;
+                    novo_Registo.labelPais.Visible = false;
+
+                    novo_Registo.bt_Editar.Visible = true;
+                    novo_Registo.bt_Salvar.Visible = false;
+
+                    // Evento para atualizar o grid quando salvar
+                    novo_Registo.Carregar_DataGrid += () =>
+                    {
+                        Carregar_Dados(); // Recarrega o DataGridView automaticamente
+                    };
+
+                    novo_Registo.ShowDialog();
+
+                }
+                else
+                {
+                    MessageBox.Show("Célula vazia", "Aviso");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro: {ex.Message}", "Erro");
+            }
+        }
+
+           
+            
+
+        #endregion
         private void bt_Add_Click(object sender, EventArgs e)
         {
             Novo_Registo _Registo = new Novo_Registo();

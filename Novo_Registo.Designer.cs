@@ -82,6 +82,7 @@
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.pictureBoxNome = new System.Windows.Forms.PictureBox();
             this.textBoxEditarNome = new System.Windows.Forms.TextBox();
+            this.bt_Editar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel_NovoRegisto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPais)).BeginInit();
@@ -166,6 +167,7 @@
             this.panel_NovoRegisto.Controls.Add(this.textBoxNome);
             this.panel_NovoRegisto.Controls.Add(this.pictureBoxNome);
             this.panel_NovoRegisto.Controls.Add(this.textBoxEditarNome);
+            this.panel_NovoRegisto.Controls.Add(this.bt_Editar);
             this.panel_NovoRegisto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_NovoRegisto.Location = new System.Drawing.Point(3, 3);
             this.panel_NovoRegisto.Name = "panel_NovoRegisto";
@@ -174,6 +176,7 @@
             // 
             // bt_Salvar
             // 
+            this.bt_Salvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bt_Salvar.BackColor = System.Drawing.Color.Transparent;
             this.bt_Salvar.BackgroundImage = global::Registo_Colaboradores.Properties.Resources.disquete__1_;
             this.bt_Salvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -538,9 +541,9 @@
             this.labelTelefone.ForeColor = System.Drawing.Color.LightGray;
             this.labelTelefone.Location = new System.Drawing.Point(751, 154);
             this.labelTelefone.Name = "labelTelefone";
-            this.labelTelefone.Size = new System.Drawing.Size(135, 20);
+            this.labelTelefone.Size = new System.Drawing.Size(145, 20);
             this.labelTelefone.TabIndex = 249;
-            this.labelTelefone.Text = "Inserir Telefone";
+            this.labelTelefone.Text = "Inserir Telemóvel";
             // 
             // label3
             // 
@@ -550,9 +553,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(745, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 20);
+            this.label3.Size = new System.Drawing.Size(80, 20);
             this.label3.TabIndex = 248;
-            this.label3.Text = "Telefone";
+            this.label3.Text = "Telemóvel";
             // 
             // txtTelemovel
             // 
@@ -754,6 +757,24 @@
             this.textBoxEditarNome.Size = new System.Drawing.Size(452, 19);
             this.textBoxEditarNome.TabIndex = 236;
             // 
+            // bt_Editar
+            // 
+            this.bt_Editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_Editar.BackColor = System.Drawing.Color.Transparent;
+            this.bt_Editar.BackgroundImage = global::Registo_Colaboradores.Properties.Resources.disquete__1_;
+            this.bt_Editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bt_Editar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_Editar.FlatAppearance.BorderSize = 0;
+            this.bt_Editar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.bt_Editar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.bt_Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Editar.Location = new System.Drawing.Point(1168, 527);
+            this.bt_Editar.Name = "bt_Editar";
+            this.bt_Editar.Size = new System.Drawing.Size(44, 42);
+            this.bt_Editar.TabIndex = 283;
+            this.bt_Editar.UseVisualStyleBackColor = false;
+            this.bt_Editar.Click += new System.EventHandler(this.bt_Editar_Click);
+            // 
             // Novo_Registo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -835,6 +856,7 @@
         public System.Windows.Forms.TextBox txtCP;
         public System.Windows.Forms.PictureBox pictureBoxCP;
         public System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Button bt_Salvar;
+        public System.Windows.Forms.Button bt_Editar;
+        public System.Windows.Forms.Button bt_Salvar;
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Registo_Colaboradores
 {
@@ -15,17 +16,19 @@ namespace Registo_Colaboradores
     {
         public event Action Carregar_DataGrid;
 
+        public int ID { get; set; }
+
         public Novo_Registo()
         {
+           
             InitializeComponent();
 
+            this.Load += new EventHandler(Novo_Registro_Load);
             // Associa o evento de clique do formulário principal (this) ao método Novo_Registro_Click
             this.Click += new EventHandler(Novo_Registro_Click);
 
             // Associa o clique no painel principal "panel_NovoRegisto" ao método que trata o clique
-            panel_NovoRegisto.Click += panel_NovoRegisto_Click;
-
-            Eventos_Controles_Formulario();
+            panel_NovoRegisto.Click += panel_NovoRegisto_Click;         
 
             //-----------------------------------------------------------------
             // Define o foco inicial para o label25 (provavelmente o primeiro campo visual do formulário)
@@ -128,6 +131,12 @@ namespace Registo_Colaboradores
             labelPais.Click += LabelPais_Click;
             pictureBoxPais.Click += PictureBoxPais_Click;
             #endregion
+
+        }
+
+        private void Novo_Registro_Load(object sender, EventArgs e)
+        {
+            Eventos_Controles_Formulario();
         }
 
         // Evento chamado quando o usuário clica em alguma parte do formulário principal
@@ -273,6 +282,7 @@ namespace Registo_Colaboradores
             }
         }
 
+        #region METODOS DOS TEXTBOX
 
         #region-------------------------------TEXTBOX NOME -----------------------------------
 
@@ -952,6 +962,8 @@ namespace Registo_Colaboradores
 
         #endregion
 
+        #endregion
+
         private void bt_Salvar_Click(object sender, EventArgs e)
         {
             string email = txtEmail.Text;
@@ -1004,10 +1016,75 @@ namespace Registo_Colaboradores
             }
             else
             {
-                MessageBox.Show("Insira um E-mail Válido");
+                MessageBox.Show("Insira um E-mail Válido", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
         }
+
+        #region Editar Dados
+
+        private void bt_Editar_Click(object sender, EventArgs e)
+        {
+            string email = txtEmail.Text;
+
+            if (email.Contains("@"))
+            {
+                string connectionString = @"Data Source=AM\SQLEXPRESS; Initial Catalog=Colaboradores; User ID=sa; Password=Flamengo2019";
+
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    try
+                    {
+                        con.Open();
+
+                        string sql = @"UPDATE Colaboradores
+                           SET Colaborador = @Colaborador,
+                               Apelido = @Apelido,
+                               Cargo = @Cargo,
+                               Telemóvel = @Telemovel,
+                               Email = @Email,
+                               Morada = @Morada,
+                               Cidade = @Cidade,
+                               Distrito = @Distrito,
+                               [Código Postal] = @CodigoPostal,
+                               País = @Pais
+                           WHERE ID = @ID";
+
+                        using (SqlCommand cmd = new SqlCommand(sql, con))
+                        {
+                            // Supondo que você tem TextBox para cada campo
+                            cmd.Parameters.AddWithValue("@ID", ID);
+                            cmd.Parameters.AddWithValue("@Colaborador", textBoxNome.Text);
+                            cmd.Parameters.AddWithValue("@Apelido", textBoxApelido.Text);
+                            cmd.Parameters.AddWithValue("@Cargo", txtCargo.Text);
+                            cmd.Parameters.AddWithValue("@Telemovel", txtTelemovel.Text);
+                            cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
+                            cmd.Parameters.AddWithValue("@Morada", txtMorada.Text);
+                            cmd.Parameters.AddWithValue("@Cidade", txtCidade.Text);
+                            cmd.Parameters.AddWithValue("@Distrito", txtDistrito.Text);
+                            cmd.Parameters.AddWithValue("@CodigoPostal", txtCP.Text);
+                            cmd.Parameters.AddWithValue("@Pais", txtPais.Text);
+
+                            cmd.ExecuteNonQuery();
+
+                            Carregar_DataGrid?.Invoke();
+                            this.Close();
+                            return;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro: " + ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Insira um E-mail Válido", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        #endregion
     }
 }
