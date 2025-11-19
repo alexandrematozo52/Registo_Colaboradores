@@ -64,7 +64,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.labelTelefone = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
+            this.txtTelemovel = new System.Windows.Forms.TextBox();
             this.pictureBoxTelefone = new System.Windows.Forms.PictureBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.labelCargo = new System.Windows.Forms.Label();
@@ -148,7 +148,7 @@
             this.panel_NovoRegisto.Controls.Add(this.textBox6);
             this.panel_NovoRegisto.Controls.Add(this.labelTelefone);
             this.panel_NovoRegisto.Controls.Add(this.label3);
-            this.panel_NovoRegisto.Controls.Add(this.txtTelefone);
+            this.panel_NovoRegisto.Controls.Add(this.txtTelemovel);
             this.panel_NovoRegisto.Controls.Add(this.pictureBoxTelefone);
             this.panel_NovoRegisto.Controls.Add(this.textBox3);
             this.panel_NovoRegisto.Controls.Add(this.labelCargo);
@@ -223,7 +223,7 @@
             this.txtPais.Location = new System.Drawing.Point(755, 463);
             this.txtPais.Name = "txtPais";
             this.txtPais.Size = new System.Drawing.Size(452, 19);
-            this.txtPais.TabIndex = 277;
+            this.txtPais.TabIndex = 241;
             // 
             // pictureBoxPais
             // 
@@ -279,7 +279,7 @@
             this.txtCP.Location = new System.Drawing.Point(65, 463);
             this.txtCP.Name = "txtCP";
             this.txtCP.Size = new System.Drawing.Size(452, 19);
-            this.txtCP.TabIndex = 272;
+            this.txtCP.TabIndex = 240;
             // 
             // pictureBoxCP
             // 
@@ -336,7 +336,7 @@
             this.txtDistrito.Location = new System.Drawing.Point(750, 364);
             this.txtDistrito.Name = "txtDistrito";
             this.txtDistrito.Size = new System.Drawing.Size(452, 19);
-            this.txtDistrito.TabIndex = 267;
+            this.txtDistrito.TabIndex = 239;
             // 
             // pictureBoxDistrito
             // 
@@ -392,7 +392,7 @@
             this.txtCidade.Location = new System.Drawing.Point(65, 364);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(452, 19);
-            this.txtCidade.TabIndex = 262;
+            this.txtCidade.TabIndex = 238;
             // 
             // pictureBoxCidade
             // 
@@ -449,7 +449,7 @@
             this.txtMorada.Location = new System.Drawing.Point(750, 257);
             this.txtMorada.Name = "txtMorada";
             this.txtMorada.Size = new System.Drawing.Size(452, 19);
-            this.txtMorada.TabIndex = 257;
+            this.txtMorada.TabIndex = 237;
             // 
             // pictureBoxMorada
             // 
@@ -505,7 +505,7 @@
             this.txtEmail.Location = new System.Drawing.Point(65, 257);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(452, 19);
-            this.txtEmail.TabIndex = 252;
+            this.txtEmail.TabIndex = 236;
             // 
             // pictureBoxEmail
             // 
@@ -554,15 +554,15 @@
             this.label3.TabIndex = 248;
             this.label3.Text = "Telefone";
             // 
-            // txtTelefone
+            // txtTelemovel
             // 
-            this.txtTelefone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefone.Location = new System.Drawing.Point(750, 154);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(452, 19);
-            this.txtTelefone.TabIndex = 247;
+            this.txtTelemovel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTelemovel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTelemovel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelemovel.Location = new System.Drawing.Point(750, 154);
+            this.txtTelemovel.Name = "txtTelemovel";
+            this.txtTelemovel.Size = new System.Drawing.Size(452, 19);
+            this.txtTelemovel.TabIndex = 235;
             // 
             // pictureBoxTelefone
             // 
@@ -618,7 +618,7 @@
             this.txtCargo.Location = new System.Drawing.Point(65, 154);
             this.txtCargo.Name = "txtCargo";
             this.txtCargo.Size = new System.Drawing.Size(452, 19);
-            this.txtCargo.TabIndex = 242;
+            this.txtCargo.TabIndex = 234;
             // 
             // pictureBoxCargo
             // 
@@ -675,7 +675,7 @@
             this.textBoxApelido.Location = new System.Drawing.Point(750, 55);
             this.textBoxApelido.Name = "textBoxApelido";
             this.textBoxApelido.Size = new System.Drawing.Size(452, 19);
-            this.textBoxApelido.TabIndex = 237;
+            this.textBoxApelido.TabIndex = 233;
             // 
             // pictureBoxApelido
             // 
@@ -797,7 +797,7 @@
         public System.Windows.Forms.TextBox textBoxEditarApelido;
         public System.Windows.Forms.Label labelTelefone;
         public System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox txtTelefone;
+        public System.Windows.Forms.TextBox txtTelemovel;
         public System.Windows.Forms.PictureBox pictureBoxTelefone;
         public System.Windows.Forms.TextBox textBox3;
         public System.Windows.Forms.Label labelCargo;

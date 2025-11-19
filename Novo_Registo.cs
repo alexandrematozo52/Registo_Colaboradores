@@ -63,11 +63,11 @@ namespace Registo_Colaboradores
 
             //-----------------------------------------------------------------
             // EVENTOS DO TEXTBOX "TELEFONE"
-            txtTelefone.TextChanged += txtTelefone_TextChanged;
-            txtTelefone.KeyPress += txtTelefone_KeyPress;
-            txtTelefone.Click += TextBoxTelefone_Click;
-            txtTelefone.Leave += TextBoxTelefone_Leave;
-            txtTelefone.Enter += TextBoxTelefone_Enter;
+            txtTelemovel.TextChanged += txtTelefone_TextChanged;
+            txtTelemovel.KeyPress += txtTelefone_KeyPress;
+            txtTelemovel.Click += TextBoxTelefone_Click;
+            txtTelemovel.Leave += TextBoxTelefone_Leave;
+            txtTelemovel.Enter += TextBoxTelefone_Enter;
             labelTelefone.Click += LabelTelefone_Click;
             pictureBoxTelefone.Click += PictureBoxTelefone_Click;
 
@@ -154,7 +154,7 @@ namespace Registo_Colaboradores
             }
 
             // Verifica se o campo "Telefone" está vazio
-            if (txtTelefone.Text == string.Empty)
+            if (txtTelemovel.Text == string.Empty)
             {
                 labelTelefone.Visible = true;
                 label25.Select();
@@ -228,7 +228,7 @@ namespace Registo_Colaboradores
                 label25.Select();
             }
 
-            if (txtTelefone.Text == string.Empty)
+            if (txtTelemovel.Text == string.Empty)
             {
                 labelTelefone.Visible = true;
                 label25.Select();
@@ -487,7 +487,7 @@ namespace Registo_Colaboradores
             }
 
             // Impede digitar mais que 9 dígitos
-            if (!char.IsControl(e.KeyChar) && txtTelefone.Text.Length >= 9)
+            if (!char.IsControl(e.KeyChar) && txtTelemovel.Text.Length >= 9)
             {
                 e.Handled = true;
             }
@@ -497,24 +497,24 @@ namespace Registo_Colaboradores
         private void txtTelefone_TextChanged(object sender, EventArgs e)
         {
             // Esconde o label se estiver vazio
-            if (txtTelefone.Text == "") 
+            if (txtTelemovel.Text == "") 
             { 
                 labelTelefone.Visible = false;       
             }
 
             // Remove qualquer caractere não numérico (caso algo seja colado)
-            string texto = new string(txtTelefone.Text.Where(char.IsDigit).ToArray());
+            string texto = new string(txtTelemovel.Text.Where(char.IsDigit).ToArray());
 
             // Limita a 9 dígitos
             if (texto.Length > 9)
                 texto = texto.Substring(0, 9);
 
             // Atualiza o texto formatado, se houve alteração
-            if (txtTelefone.Text != texto)
+            if (txtTelemovel.Text != texto)
             {
-                int pos = txtTelefone.SelectionStart;
-                txtTelefone.Text = texto;
-                txtTelefone.SelectionStart = Math.Min(pos, txtTelefone.Text.Length);
+                int pos = txtTelemovel.SelectionStart;
+                txtTelemovel.Text = texto;
+                txtTelemovel.SelectionStart = Math.Min(pos, txtTelemovel.Text.Length);
             }
         }
 
@@ -522,7 +522,7 @@ namespace Registo_Colaboradores
         // Esconde o label ao clicar no campo se estiver vazio
         private void TextBoxTelefone_Click(object sender, EventArgs e)
         {
-            if (txtTelefone.Text == "")
+            if (txtTelemovel.Text == "")
             {
                 labelTelefone.Visible = false;
             }
@@ -532,13 +532,13 @@ namespace Registo_Colaboradores
         private void LabelTelefone_Click(object sender, EventArgs e)
         {
             labelTelefone.Visible = false;
-            txtTelefone.Select();
+            txtTelemovel.Select();
         }
 
         // Mostra o label se o campo estiver vazio ao perder o foco
         private void TextBoxTelefone_Leave(object sender, EventArgs e)
         {
-            if (txtTelefone.Text == "")
+            if (txtTelemovel.Text == "")
             {
                 labelTelefone.Visible = true;
             }
@@ -553,7 +553,7 @@ namespace Registo_Colaboradores
         // Foca no campo ao clicar na imagem
         private void PictureBoxTelefone_Click(object sender, EventArgs e)
         {
-            txtTelefone.Select();
+            txtTelemovel.Select();
         }
 
         #endregion
@@ -952,84 +952,44 @@ namespace Registo_Colaboradores
 
         private void bt_Salvar_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=AM\SQLEXPRESS; Initial Catalog=AdventureWorks2019; User ID=sa; Password=Flamengo2019";
+            string connectionString = @"Data Source=AM\SQLEXPRESS; Initial Catalog=Colaboradores; User ID=sa; Password=Flamengo2019";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                conn.Open();
-
-                SqlTransaction tran = conn.BeginTransaction();
-
                 try
                 {
-                    // 1. Inserir pessoa
-                    SqlCommand cmdPerson = new SqlCommand(@"
-                INSERT INTO Person.Person (FirstName, LastName)
-                VALUES (@FirstName, @LastName);
-                SELECT SCOPE_IDENTITY();", conn, tran);
+                    conn.Open();
 
-                    cmdPerson.Parameters.AddWithValue("@FirstName", textBoxNome.Text);
-                    cmdPerson.Parameters.AddWithValue("@LastName", textBoxApelido.Text);
+                    // Comando SQL com parâmetros
+                    string sql = @"
+                    INSERT INTO [Colaboradores].[dbo].[Colaboradores]
+                    (Colaborador, Apelido, Cargo, Telemóvel, Email, Morada, Cidade, Distrito, [Código Postal], País)
+                    VALUES
+                    (@Colaborador, @Apelido, @Cargo, @Telemovel, @Email, @Morada, @Cidade, @Distrito, @CodigoPostal, @Pais);
+                    SELECT SCOPE_IDENTITY();"; 
 
-                    int personId = Convert.ToInt32(cmdPerson.ExecuteScalar());
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        // Substitua os valores pelos campos do seu formulário
+                        cmd.Parameters.AddWithValue("@Colaborador", textBoxNome.Text);
+                        cmd.Parameters.AddWithValue("@Apelido", textBoxApelido.Text);
+                        cmd.Parameters.AddWithValue("@Cargo", txtCargo.Text);
+                        cmd.Parameters.AddWithValue("@Telemovel", txtTelemovel.Text);
+                        cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
+                        cmd.Parameters.AddWithValue("@Morada", txtMorada.Text);
+                        cmd.Parameters.AddWithValue("@Cidade", txtCidade.Text);
+                        cmd.Parameters.AddWithValue("@Distrito", txtDistrito.Text);
+                        cmd.Parameters.AddWithValue("@CodigoPostal", txtCP.Text);
+                        cmd.Parameters.AddWithValue("@Pais", txtPais.Text);
 
-                    // 2. Inserir funcionário
-                    SqlCommand cmdEmployee = new SqlCommand(@"
-                INSERT INTO HumanResources.Employee (BusinessEntityID, JobTitle)
-                VALUES (@PersonID, @JobTitle);", conn, tran);
-
-                    cmdEmployee.Parameters.AddWithValue("@PersonID", personId);
-                    cmdEmployee.Parameters.AddWithValue("@JobTitle", txtCargo.Text);
-                    cmdEmployee.ExecuteNonQuery();
-
-                    // 3. Inserir endereço
-                    SqlCommand cmdAddress = new SqlCommand(@"
-                INSERT INTO Person.Address (AddressLine1, City, StateProvinceID, PostalCode)
-                VALUES (@AddressLine1, @City, @StateProvinceID, @PostalCode);
-                SELECT SCOPE_IDENTITY();", conn, tran);
-
-                    cmdAddress.Parameters.AddWithValue("@AddressLine1", txtMorada.Text);
-                    cmdAddress.Parameters.AddWithValue("@City", txtCidade.Text);
-                    cmdAddress.Parameters.AddWithValue("@StateProvinceID", txtDistrito.Text);
-                    cmdAddress.Parameters.AddWithValue("@PostalCode", txtCP.Text);
-
-                    int addressId = Convert.ToInt32(cmdAddress.ExecuteScalar());
-
-                    // 4. Relacionar pessoa e endereço
-                    SqlCommand cmdBusinessAddress = new SqlCommand(@"
-                INSERT INTO Person.BusinessEntityAddress (BusinessEntityID, AddressID, AddressTypeID)
-                VALUES (@PersonID, @AddressID, 1);", conn, tran);
-
-                    cmdBusinessAddress.Parameters.AddWithValue("@PersonID", personId);
-                    cmdBusinessAddress.Parameters.AddWithValue("@AddressID", addressId);
-                    cmdBusinessAddress.ExecuteNonQuery();
-
-                    // 5. Inserir e-mail
-                    SqlCommand cmdEmail = new SqlCommand(@"
-                INSERT INTO Person.EmailAddress (BusinessEntityID, EmailAddress)
-                VALUES (@PersonID, @EmailAddress);", conn, tran);
-
-                    cmdEmail.Parameters.AddWithValue("@PersonID", personId);
-                    cmdEmail.Parameters.AddWithValue("@EmailAddress", txtEmail.Text);
-                    cmdEmail.ExecuteNonQuery();
-
-                    // 6. Inserir telefone
-                    SqlCommand cmdPhone = new SqlCommand(@"
-                INSERT INTO Person.PersonPhone (BusinessEntityID, PhoneNumber, PhoneNumberTypeID)
-                VALUES (@PersonID, @PhoneNumber, 1);", conn, tran);
-
-                    cmdPhone.Parameters.AddWithValue("@PersonID", personId);
-                    cmdPhone.Parameters.AddWithValue("@PhoneNumber", txtTelefone.Text);
-                    cmdPhone.ExecuteNonQuery();
-
-                    tran.Commit();
-
-                    MessageBox.Show("Registo salvo com sucesso!");
+                        // Executa e captura o ID gerado
+                        int newId = Convert.ToInt32(cmd.ExecuteScalar());
+                        MessageBox.Show($"Colaborador inserido com sucesso! ID: {newId}");
+                    }
                 }
                 catch (Exception ex)
                 {
-                    tran.Rollback();
-                    MessageBox.Show("Erro ao salvar: " + ex.Message);
+                    MessageBox.Show("Erro ao salvar o colaborador: " + ex.Message);
                 }
             }
         }

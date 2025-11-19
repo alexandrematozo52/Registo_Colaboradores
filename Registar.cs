@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -28,27 +29,49 @@ namespace Registo_Colaboradores
             ConfigurarDataGridViewHover();
 
             DataGridView_Colaboradores.CellClick += DataGridView_Colaboradores_CellClick;
+
+            DefinirPictureBoxDataGridCircular(pictureBox1);
+        }
+
+        private void DefinirPictureBoxDataGridCircular(PictureBox pictureBox)
+        {
+            GraphicsPath path = new GraphicsPath();
+
+            // Adicione um retângulo arredondado ao GraphicsPath
+            int radius = 20; // Ajuste o raio conforme necessário
+
+            path.AddArc(0, 0, radius * 2, radius * 2, 180, 90); // canto superior esquerdo
+            path.AddArc(pictureBox.Width - (radius * 2), 0, radius * 2, radius * 2, 270, 90); // canto superior direito
+            path.AddArc(pictureBox.Width - (radius * 2), pictureBox.Height - (radius * 2), radius * 2, radius * 2, 0, 90); // canto inferior direito
+            path.AddArc(0, pictureBox.Height - (radius * 2), radius * 2, radius * 2, 90, 90); // canto inferior esquerdo
+            path.CloseFigure();
+
+
+
+            // Atribua a região à PictureBox
+            pictureBox.Region = new Region(path);
+            pictureBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
         }
 
         private void Carregar_Dados()
         {
-            string connectionString = @"Data Source=AM\SQLEXPRESS; Initial Catalog=AdventureWorks2019; User ID=sa; Password=Flamengo2019";
+            string connectionString = @"Data Source=AM\SQLEXPRESS; Initial Catalog=Colaboradores; User ID=sa; Password=Flamengo2019";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = @"SELECT
-                      [FirstName] as 'Nome'
-                      ,[LastName] as 'Apelido' 
-                      ,[JobTitle] as 'Cargo'
-                      ,[PhoneNumber] as 'Telefone'
-                      ,[EmailAddress] as 'Endereço de E-mail'
-                      ,[AddressLine1] as 'Morada'
-                      ,[City] as 'Cidade'
-                      ,[StateProvinceName] as 'Distrito'
-                      ,[PostalCode] as 'Código Postal'
-                      ,[CountryRegionName] 'País'
-                  FROM [AdventureWorks2019].[HumanResources].[vEmployee]
-                  ORDER BY Nome";
+                       Colaborador
+                      ,Apelido 
+                      ,Cargo
+                      ,[Telemóvel]
+                      ,Email
+                      ,Morada
+                      ,Cidade
+                      ,Distrito
+                      ,[Código Postal]
+                      ,[País]
+                  FROM [Colaboradores].[dbo].[Colaboradores]
+                  ORDER BY Colaborador";
 
                 conn.Open();
 

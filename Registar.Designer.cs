@@ -38,10 +38,12 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.DataGridView_Colaboradores = new Zuby.ADGV.AdvancedDataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Colaboradores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -126,6 +128,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.DataGridView_Colaboradores);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1376, 657);
@@ -133,7 +136,11 @@
             // 
             // DataGridView_Colaboradores
             // 
+            this.DataGridView_Colaboradores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DataGridView_Colaboradores.BackgroundColor = System.Drawing.Color.White;
+            this.DataGridView_Colaboradores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -151,17 +158,30 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DataGridView_Colaboradores.DefaultCellStyle = dataGridViewCellStyle2;
-            this.DataGridView_Colaboradores.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGridView_Colaboradores.FilterAndSortEnabled = true;
             this.DataGridView_Colaboradores.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.DataGridView_Colaboradores.Location = new System.Drawing.Point(0, 0);
+            this.DataGridView_Colaboradores.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.DataGridView_Colaboradores.Location = new System.Drawing.Point(8, 8);
             this.DataGridView_Colaboradores.MaxFilterButtonImageHeight = 23;
             this.DataGridView_Colaboradores.Name = "DataGridView_Colaboradores";
             this.DataGridView_Colaboradores.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DataGridView_Colaboradores.RowHeadersVisible = false;
-            this.DataGridView_Colaboradores.Size = new System.Drawing.Size(1376, 657);
+            this.DataGridView_Colaboradores.Size = new System.Drawing.Size(1360, 640);
             this.DataGridView_Colaboradores.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.DataGridView_Colaboradores.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1376, 657);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // Registar
             // 
@@ -180,6 +200,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Colaboradores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -193,6 +214,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
         private Zuby.ADGV.AdvancedDataGridView DataGridView_Colaboradores;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
