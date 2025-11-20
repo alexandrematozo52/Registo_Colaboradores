@@ -82,23 +82,23 @@ CREATE TABLE [dbo].[Colaboradores](
 
     [ID] INT IDENTITY PRIMARY KEY,
     
-    [Colaborador] NVARCHAR(100),
+    [Colaborador] NVARCHAR(20),
     
-    [Apelido] NVARCHAR(100),
+    [Apelido] NVARCHAR(20),
     
-    [Cargo] NVARCHAR(120),
+    [Cargo] NVARCHAR(100),
     
-    [Telemóvel] NVARCHAR(20),
+    [Telemóvel] NVARCHAR(15),
     
     [Email] NVARCHAR(150),
     
     [Morada] NVARCHAR(200),
     
-    [Cidade] NVARCHAR(100),
+    [Cidade] NVARCHAR(50),
     
-    [Distrito] NVARCHAR(100),
+    [Distrito] NVARCHAR(50),
     
-    [Código Postal] NVARCHAR(20),
+    [Código Postal] NVARCHAR(9),
     
     [País] NVARCHAR(50)
 );
