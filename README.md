@@ -1,10 +1,12 @@
 📌 Registo de Colaboradores – Aplicação WinForms em C# (.NET Framework)
+
 🧑‍💻 Projeto desenvolvido como parte dos meus estudos de C# e Windows Forms.
 
 Este projeto consiste numa aplicação de Registo e Gestão de Colaboradores, construída com C#, WinForms, ADO.NET e SQL Server.
 O objetivo é treinar práticas profissionais de desenvolvimento desktop, arquitetura de código limpa, acesso a dados e boas práticas de UI/UX dentro do Windows Forms.
 
 🚀 Funcionalidades Principais
+
 ✔️ Listagem de Colaboradores
 
 🔹Carrega automaticamente todos os colaboradores da base de dados SQL Server.
@@ -48,11 +50,16 @@ O objetivo é treinar práticas profissionais de desenvolvimento desktop, arquit
 🔹String de conexão lida via ConfigurationManager (app.config)
 
 🏗️ Arquitetura do Projeto
+
 Registo_Colaboradores/
 │
+
 ├── Registar.cs                 // Tela principal com DataGridView
+
 ├── Novo_Registo.cs             // Formulário para inserir/editar colaborador
+
 ├── App.config                  // Configuração da ligação ao SQL Server
+
 └── Properties/
 
 🗂️ Tecnologias Utilizadas
@@ -70,17 +77,29 @@ Registo_Colaboradores/
 🔹System.Drawing / GraphicsPath
 
 🗃️ Estrutura da Tabela Utilizada
+
 CREATE TABLE [dbo].[Colaboradores](
+
     [ID] INT IDENTITY PRIMARY KEY,
+    
     [Colaborador] NVARCHAR(100),
+    
     [Apelido] NVARCHAR(100),
+    
     [Cargo] NVARCHAR(120),
+    
     [Telemóvel] NVARCHAR(20),
+    
     [Email] NVARCHAR(150),
+    
     [Morada] NVARCHAR(200),
+    
     [Cidade] NVARCHAR(100),
+    
     [Distrito] NVARCHAR(100),
+    
     [Código Postal] NVARCHAR(20),
+    
     [País] NVARCHAR(50)
 );
 
