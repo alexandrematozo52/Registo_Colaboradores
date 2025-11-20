@@ -110,6 +110,7 @@ CREATE TABLE [dbo].[Colaboradores](
 </connectionStrings>
 
 📸 Recursos de UI Implementados
+
 🔹 Hover no DataGridView
 
 Ao passar o mouse sobre uma linha não selecionada, o fundo muda para LightCyan.
@@ -156,7 +157,7 @@ Sinta-se à vontade para contribuir com melhorias no código, UI, arquitetura ou
 
 Se quiser acompanhar minha evolução e projetos:
 
-👉 [Seu LinkedIn aqui]
+👉 www.linkedin.com/in/alexandre-matozo-699393280
 
 ⭐ Se achou útil, deixe uma estrela no GitHub!
 
