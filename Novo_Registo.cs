@@ -34,7 +34,7 @@ namespace Registo_Colaboradores
             //-----------------------------------------------------------------
             // Define o foco inicial para o label25 (provavelmente o primeiro campo visual do formulário)
             label25.Select();
-
+            bt_Trash.Visible = false;
         }
 
         private void Eventos_Controles_Formulario()
@@ -969,7 +969,8 @@ namespace Registo_Colaboradores
         {
             string email = txtEmail.Text;
 
-            if (email.Contains("@"))
+            if (email.Contains("@") && 
+                email.Contains("."))
             {
                 string connectionString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
 
@@ -1029,7 +1030,8 @@ namespace Registo_Colaboradores
         {
             string email = txtEmail.Text;
 
-            if (email.Contains("@"))
+            if (email.Contains("@") &&
+                email.Contains("."))
             {
                 string connectionString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
 
@@ -1086,6 +1088,52 @@ namespace Registo_Colaboradores
             }
         }
 
+
         #endregion
+
+        private void bt_Trash_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Tem certeza que deseja remover o colaborador?"
+                ,"Remover"
+                ,MessageBoxButtons.YesNo
+                ,MessageBoxIcon.Information);
+
+            if (result == DialogResult.Yes)
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["ConexaoBD"].ConnectionString;
+
+                string query = @"DELETE FROM Colaboradores
+                                 WHERE ID = @ID";
+                try
+                {
+                    using (SqlConnection con = new SqlConnection(connectionString))
+                    {
+                        con.Open();
+
+                        SqlCommand cmd = new SqlCommand(query, con);
+
+                        cmd.Parameters.AddWithValue("@ID", ID);
+
+                        cmd.ExecuteNonQuery();
+
+                        if (cmd.Parameters.Count > 0)
+                        {
+                            MessageBox.Show("Colaborador foi excluído");
+
+                            Carregar_DataGrid?.Invoke();
+                            this.Close();
+                            return;
+                        }
+                    }
+                }
+                catch(Exception ex) 
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                
+            }
+
+        }
     }
 }

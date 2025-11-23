@@ -109,6 +109,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <None Include="Resources\trash %281%29.png" />
+    <None Include="Resources\trash.png" />
     <None Include="Resources\disquete %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

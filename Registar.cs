@@ -235,6 +235,7 @@ namespace Registo_Colaboradores
 
                     novo_Registo.bt_Editar.Visible = true;
                     novo_Registo.bt_Salvar.Visible = false;
+                    novo_Registo.bt_Trash.Visible = true;
 
                     // Evento para atualizar o grid quando salvar
                     novo_Registo.Carregar_DataGrid += () =>

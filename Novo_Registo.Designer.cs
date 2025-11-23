@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Novo_Registo));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel_NovoRegisto = new System.Windows.Forms.Panel();
+            this.bt_Trash = new System.Windows.Forms.Button();
             this.bt_Salvar = new System.Windows.Forms.Button();
             this.labelPais = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -110,12 +111,13 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 583F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1274, 583);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel_NovoRegisto
             // 
+            this.panel_NovoRegisto.Controls.Add(this.bt_Trash);
             this.panel_NovoRegisto.Controls.Add(this.bt_Salvar);
             this.panel_NovoRegisto.Controls.Add(this.labelPais);
             this.panel_NovoRegisto.Controls.Add(this.label7);
@@ -173,6 +175,24 @@
             this.panel_NovoRegisto.Name = "panel_NovoRegisto";
             this.panel_NovoRegisto.Size = new System.Drawing.Size(1268, 577);
             this.panel_NovoRegisto.TabIndex = 0;
+            // 
+            // bt_Trash
+            // 
+            this.bt_Trash.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_Trash.BackColor = System.Drawing.Color.Transparent;
+            this.bt_Trash.BackgroundImage = global::Registo_Colaboradores.Properties.Resources.trash__1_;
+            this.bt_Trash.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bt_Trash.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_Trash.FlatAppearance.BorderSize = 0;
+            this.bt_Trash.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.bt_Trash.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.bt_Trash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Trash.Location = new System.Drawing.Point(1118, 527);
+            this.bt_Trash.Name = "bt_Trash";
+            this.bt_Trash.Size = new System.Drawing.Size(44, 42);
+            this.bt_Trash.TabIndex = 284;
+            this.bt_Trash.UseVisualStyleBackColor = false;
+            this.bt_Trash.Click += new System.EventHandler(this.bt_Trash_Click);
             // 
             // bt_Salvar
             // 
@@ -858,5 +878,6 @@
         public System.Windows.Forms.TextBox textBox10;
         public System.Windows.Forms.Button bt_Editar;
         public System.Windows.Forms.Button bt_Salvar;
+        public System.Windows.Forms.Button bt_Trash;
     }
 }
