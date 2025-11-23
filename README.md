@@ -159,6 +159,3 @@ Se quiser acompanhar minha evolução e projetos:
 
 👉 www.linkedin.com/in/alexandre-matozo-699393280
 
-⭐ Se achou útil, deixe uma estrela no GitHub!
-
-Agradeço pelo apoio 😊
