@@ -23,9 +23,6 @@ namespace Registo_Colaboradores
         {
             InitializeComponent();
             this.Load += new EventHandler(Registar_Load);
-            
-            
-
         }
 
         private void Registar_Load(object sender, EventArgs e)
@@ -240,7 +237,7 @@ namespace Registo_Colaboradores
                     // Evento para atualizar o grid quando salvar
                     novo_Registo.Carregar_DataGrid += () =>
                     {
-                        Carregar_Dados(); // Recarrega o DataGridView automaticamente
+                        Carregar_Dados(); 
                     };
 
                     novo_Registo.ShowDialog();
@@ -255,10 +252,7 @@ namespace Registo_Colaboradores
             {
                 MessageBox.Show($"Erro: {ex.Message}", "Erro");
             }
-        }
-
-           
-            
+        }      
 
         #endregion
         private void bt_Add_Click(object sender, EventArgs e)
@@ -268,7 +262,7 @@ namespace Registo_Colaboradores
             // Evento para atualizar o grid quando salvar
             _Registo.Carregar_DataGrid += () =>
             {
-                Carregar_Dados(); // Recarrega o DataGridView automaticamente
+                Carregar_Dados(); 
             };
 
             _Registo.ShowDialog();
